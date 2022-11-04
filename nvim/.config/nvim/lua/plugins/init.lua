@@ -1,0 +1,2 @@
+-- require("plugins.configs.cmp")
+-- checking something

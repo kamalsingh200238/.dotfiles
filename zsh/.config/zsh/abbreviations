@@ -1,0 +1,3 @@
+abbr nixe="nix-env -e"
+abbr nixi="nix-env -iA nixpkgs."
+abbr tn="tmux new -s"
