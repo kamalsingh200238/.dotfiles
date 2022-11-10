@@ -11,7 +11,7 @@ vim.g.loaded_netrwPlugin = 1
 nvimtree.setup({
 	sort_by = "case_sensitive",
 	view = {
-		adaptive_size = false,
+		adaptive_size = true,
 		side = "right",
 		width = 30,
 		mappings = {
@@ -21,6 +21,19 @@ nvimtree.setup({
 		},
 	},
 	filters = {
-		dotfiles = true,
+		dotfiles = false,
+	},
+	renderer = {
+		add_trailing = true,
+		indent_markers = {
+			enable = true,
+			icons = {
+				corner = "└",
+				edge = "│",
+				item = "│",
+				bottom = "─",
+				none = " ",
+			},
+		},
 	},
 })
