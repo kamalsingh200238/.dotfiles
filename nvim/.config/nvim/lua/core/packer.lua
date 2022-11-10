@@ -151,6 +151,7 @@ packer.startup(function(use)
 			require("plugins.configs.indent-line")
 		end,
 	})
+
 	use({ -- nvim tree
 		"nvim-tree/nvim-tree.lua",
 		tag = "nightly",
@@ -178,11 +179,6 @@ packer.startup(function(use)
 		end,
 	})
 	use({ "folke/tokyonight.nvim" })
-	use({
-		"Mofiqul/dracula.nvim",
-		config = function()
-			require("plugins.configs.colorschemes.dracula")
-		end,
-	})
+	use({ "dracula/vim" })
 	use({ "tjdevries/colorbuddy.nvim" })
 end)
