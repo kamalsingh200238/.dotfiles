@@ -13,6 +13,7 @@ map.set("n", "<leader>h", "<cmd>nohlsearch<Cr>", { desc = "remove search highlig
 map.set("n", "+", "<C-a>", { desc = "increase count" }, opts)
 map.set("n", "-", "<C-x>", { desc = "decrease count" }, opts)
 map.set("n", "<C-a>", "gg<S-v>G", { desc = "select whole document" }, opts)
+map.set("n", "<leader><leader>s", "<cmd>source %<cr>", { desc = "source current file" }, opts)
 
 -- Split Window
 map.set("n", "ss", ":split<Return><C-w>w", { desc = "split window horizontally" })
