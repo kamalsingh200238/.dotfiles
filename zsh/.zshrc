@@ -25,7 +25,7 @@ alias lg="lazygit"
 alias vi="nvim"
 # for my dotfiles
 alias myzsh="nvim ~/.zshrc"
-alias mynvim="cd ~/.config/nvim && nvim"
+alias myvi="cd ~/.config/nvim && vi"
 alias prd="pnpm run dev"
 # for tmux
 alias tks="tmux kill-server"
