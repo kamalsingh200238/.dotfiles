@@ -68,7 +68,14 @@ packer.startup(function(use)
 	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
 	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
 	use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
-	use({ "L3MON4D3/LuaSnip", module = "luasnip", wants = "friendly-snippets" }) -- snippet engine
+	use({
+		"L3MON4D3/LuaSnip",
+		module = "luasnip",
+		tag = "v<CurrentMajor>.*",
+		config = function()
+			require("plugins.configs.luasnip")
+		end,
+	}) -- snippet engine
 	use({ "rafamadriz/friendly-snippets" }) -- snippets collection
 
 	use({ -- Treesitter
