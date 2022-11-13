@@ -7,8 +7,6 @@ if vim.g.snippets ~= "luasnip" then
 	print("set vim.g.snippets = 'luasnip'")
 	return
 end
-local make = R("tj.snips").make
-local types = require("luasnip.util.types")
 
 ls.config.set_config({
 	-- This tells LuaSnip to remember to keep around the last snippet.
