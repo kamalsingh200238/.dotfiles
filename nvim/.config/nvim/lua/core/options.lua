@@ -1,4 +1,5 @@
 local o = vim.opt
+local g = vim.g
 
 vim.cmd("autocmd!")
 vim.scriptencoding = "utf-8"
@@ -7,6 +8,7 @@ vim.wo.number = true
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
 
+g.snippets = "luasnip" -- for snippets
 o.number = true
 o.relativenumber = true
 o.signcolumn = "yes" -- for space on left hand side
