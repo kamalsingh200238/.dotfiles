@@ -58,19 +58,17 @@ packer.startup(function(use)
 
 	use({
 		"hrsh7th/nvim-cmp",
-		event = "InsertEnter",
 		config = function()
 			require("plugins.configs.cmp")
 		end,
 	})
 	use({ "hrsh7th/cmp-nvim-lsp" }) -- Don't lazy load this, because it's needed by nvim-lspconfig to work
-	use({ "hrsh7th/cmp-nvim-lua", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-buffer", after = "nvim-cmp" })
-	use({ "hrsh7th/cmp-path", after = "nvim-cmp" })
-	use({ "saadparwaiz1/cmp_luasnip", after = "nvim-cmp" })
+	use({ "hrsh7th/cmp-nvim-lua" })
+	use({ "hrsh7th/cmp-buffer" })
+	use({ "hrsh7th/cmp-path" })
+	use({ "saadparwaiz1/cmp_luasnip" })
 	use({
 		"L3MON4D3/LuaSnip",
-		module = "luasnip",
 		tag = "v<CurrentMajor>.*",
 		config = function()
 			require("plugins.configs.luasnip")
