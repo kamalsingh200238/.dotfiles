@@ -4,11 +4,27 @@ if not status_ok then
 end
 
 ts.setup({
-	-- ensure_installed = "all",
+	ensure_installed = {},
 	-- Install parsers synchronously (only applied to `ensure_installed`)
 	sync_install = true,
 	-- Automatically install missing parsers when entering buffer
 	auto_install = true,
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+	indent = {
+		enable = true,
+	},
+	autopairs = {
+		enable = true,
+	},
+	autotag = {
+		enable = true,
+	},
+	incremental_selection = {
+		enable = true,
+	},
 	-- Colored brackets
 	rainbow = {
 		enable = true,
@@ -18,15 +34,7 @@ ts.setup({
 			"#14fc03",
 			"#03fcc2",
 			"#ffffff",
-			"#fc03f0",
 		},
-	},
-	highlight = {
-		enable = true,
-		additional_vim_regex_highlighting = false,
-	},
-	indent = {
-		enable = true,
 	},
 	context_commentstring = {
 		enable = true,
@@ -40,14 +48,5 @@ ts.setup({
 				comment = "// %s",
 			},
 		},
-	},
-	autopairs = {
-		enable = true,
-	},
-	incremental_selection = {
-		enable = true,
-	},
-	autotag = {
-		enable = true,
 	},
 })

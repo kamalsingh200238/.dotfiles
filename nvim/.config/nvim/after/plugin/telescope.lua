@@ -26,12 +26,17 @@ telescope.setup({
 				preview_width = 0.5,
 				results_width = 0.5,
 			},
-			width = 0.99,
-			height = 0.99,
+			width = 0.85,
+			height = 0.85,
 			preview_cutoff = 120,
 		},
 		file_ignore_patterns = { "node_modules" },
 		borderchars = { "─", "│", "─", "│", "╭", "╮", "╯", "╰" },
 		color_devicons = true,
+	},
+	pickers = {
+		colorscheme = {
+			enable_preview = true,
+		},
 	},
 })

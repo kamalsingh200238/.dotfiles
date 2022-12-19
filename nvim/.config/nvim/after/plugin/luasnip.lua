@@ -46,9 +46,9 @@ vim.keymap.set("i", "<c-l>", function()
 end, { desc = "select from list of options in a snippet" })
 
 ls.snippets = {
-	all = {
-		ls.parser.parse_snippet("expand", "--this will be expanded"),
-	},
+-- all = {
+-- 	ls.parser.parse_snippet("expand", "--this will be expanded"),
+-- },
 }
 
 ls.config.set_config(options)

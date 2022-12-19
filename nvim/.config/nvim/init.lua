@@ -1,5 +1,1 @@
-require("core.options")
-require("core.mappings")
-require("core.colors")
-require("core.packer")
--- require("plugins")
+require("core")
