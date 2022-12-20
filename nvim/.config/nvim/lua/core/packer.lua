@@ -30,6 +30,7 @@ packer.startup(function(use)
 	use({ "tpope/vim-surround" })
 	use({ "ThePrimeagen/harpoon" })
 	use({ "mbbill/undotree" })
+	use({ "mattn/emmet-vim" })
 	-- helpers --------------------------]]]
 
 	use({ "nvim-tree/nvim-tree.lua", tag = "nightly" })
