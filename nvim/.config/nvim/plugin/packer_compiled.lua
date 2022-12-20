@@ -120,6 +120,11 @@ _G.packer_plugins = {
     path = "/home/ke/.local/share/nvim/site/pack/packer/start/colorbuddy.nvim",
     url = "https://github.com/tjdevries/colorbuddy.nvim"
   },
+  ["emmet-vim"] = {
+    loaded = true,
+    path = "/home/ke/.local/share/nvim/site/pack/packer/start/emmet-vim",
+    url = "https://github.com/mattn/emmet-vim"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/ke/.local/share/nvim/site/pack/packer/start/friendly-snippets",
