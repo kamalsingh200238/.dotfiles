@@ -25,7 +25,6 @@ lsp.set_preferences({
 lsp.ensure_installed({
   'tsserver',
   'tailwindcss',
-  'eslint',
   'sumneko_lua',
 })
 
