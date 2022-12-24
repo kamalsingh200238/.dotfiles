@@ -23,8 +23,8 @@ telescope.setup({
 		entry_prefix = "  ",
 		layout_config = {
 			horizontal = {
-				preview_width = 0.5,
-				results_width = 0.5,
+				preview_width = 0.4,
+				results_width = 0.6,
 			},
 			width = 0.85,
 			height = 0.85,
