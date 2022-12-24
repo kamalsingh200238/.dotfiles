@@ -107,9 +107,9 @@ packer.startup(function(use)
 	use({ "rose-pine/neovim" })
 	use({ "catppuccin/nvim" })
 	use({ "folke/tokyonight.nvim" })
-	use({ "dracula/vim" })
 	use({ "morhetz/gruvbox" })
 	use({ "bluz71/vim-nightfly-colors" })
+	use({ "monsonjeremy/onedark.nvim" , branch = 'treesitter' })
 
 	if packer_bootstrap then
 		require("packer").sync()
