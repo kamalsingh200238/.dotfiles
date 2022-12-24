@@ -79,10 +79,10 @@ cmp.setup({
   },
   sources = {
     { name = "path" },
+    { name = "luasnip" },
     { name = "nvim_lsp" },
     { name = "nvim_lua" },
     { name = "buffer" },
-    { name = "luasnip" },
   },
   snippet = {
     expand = function(args)
