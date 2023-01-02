@@ -27,6 +27,7 @@ alias vi="nvim"
 alias myzsh="nvim ~/.zshrc"
 alias myvi="cd ~/.config/nvim && vi"
 alias prd="pnpm run dev"
+alias avi="nvim -u ~/.config/astronvim/entry.lua"
 # for tmux
 alias tks="tmux kill-server"
 alias tl="tmux ls"

@@ -32,9 +32,9 @@ map.set("n", "<C-up>", "<C-w>+", { desc = "resize window" }, { noremap = true, s
 map.set("n", "<C-down>", "<C-w>-", { desc = "resize window" }, { noremap = true, silent = true, buffer = 1 })
 
 -- Packer
-map.set("n", "<leader>pc", "<cmd>PackerCompile<Cr>", { desc = "packer compile" }, opts)
 map.set("n", "<leader>ps", "<cmd>PackerSync<Cr>", { desc = "packer sync" }, opts)
-map.set("n", "<leader>pS", "<cmd>PackerStatus<Cr>", { desc = "packer sync" }, opts)
+map.set("n", "<leader>pS", "<cmd>PackerStatus<Cr>", { desc = "packer status" }, opts)
+map.set("n", "<leader>pc", "<cmd>PackerCompile<Cr>", { desc = "packer compile" }, opts)
 map.set("n", "<leader>pC", "<cmd>PackerClean<Cr>", { desc = "packer clean" }, opts)
 
 -- For buffers

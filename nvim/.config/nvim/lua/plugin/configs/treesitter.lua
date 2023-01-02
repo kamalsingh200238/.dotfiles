@@ -30,10 +30,11 @@ ts.setup({
 		enable = true,
 		extended_mode = false,
 		colors = {
-			"#fcf003",
+			"#ebb434",
 			"#14fc03",
-			"#03fcc2",
+			"#21baed",
 			"#ffffff",
+			"#862dfc",
 		},
 	},
 	context_commentstring = {
