@@ -7,7 +7,6 @@ end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
--- OR setup with some options
 nvimtree.setup({
   sort_by = "case_sensitive",
   view = {
