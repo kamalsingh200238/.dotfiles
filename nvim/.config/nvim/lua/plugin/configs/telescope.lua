@@ -4,18 +4,6 @@ if not status_ok then
 	return
 end
 
--- For telescope
-local builtin = require("telescope.builtin")
-local opts = { silent = true, noremap = true }
-vim.keymap.set("n", "<leader>ff", builtin.find_files, opts)
-vim.keymap.set("n", "<leader>fg", builtin.live_grep, opts)
-vim.keymap.set("n", "<leader>fb", builtin.buffers, opts)
-vim.keymap.set("n", "<leader>fh", builtin.help_tags, opts)
-vim.keymap.set("n", "<leader>fd", builtin.diagnostics, opts)
-vim.keymap.set("n", "<leader>ft", builtin.colorscheme, opts)
-vim.keymap.set("n", "<leader>gc", builtin.git_commits, opts)
-vim.keymap.set("n", "<leader>gb", builtin.git_branches, opts)
-
 telescope.setup({
 	defaults = {
 		prompt_prefix = "   ",
