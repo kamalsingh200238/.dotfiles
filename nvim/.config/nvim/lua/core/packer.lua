@@ -88,6 +88,7 @@ packer.startup(function(use)
 
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/bufferline.nvim" })
+	use({ "mrjones2014/smart-splits.nvim" })
 
 	use({ "lukas-reineke/indent-blankline.nvim" })
 
