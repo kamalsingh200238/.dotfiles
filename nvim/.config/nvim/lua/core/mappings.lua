@@ -101,6 +101,10 @@ map.set("n", "[d", "<Cmd>Lspsaga diagnostic_jump_prev<CR>", { desc = "jump prev 
 map.set("n", "]d", "<Cmd>Lspsaga diagnostic_jump_next<CR>", { desc = "jump next diagonstic" }, opts)
 
 -- For telescope
+map.set("n", "<leader>ft", function()
+	require("telescope.builtin").colorscheme()
+end, { desc = "change colorscheme" }, opts)
+
 map.set("n", "<leader>ff", function()
 	require("telescope.builtin").find_files()
 end, { desc = "Search files" }, opts)
