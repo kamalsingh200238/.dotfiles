@@ -41,7 +41,7 @@ LC_CTYPE=en_US.UTF-8
 LC_ALL=en_US.UTF-8
 LANGUAGE=en_US.UTF-8
 LANG=en_US.UTF-8
-export EDITOR="lvim"
+export EDITOR="nvim"
 export PATH="$HOME/.local/bin:$PATH"
 #for good movement
 bindkey "^[[1;5C" forward-word
