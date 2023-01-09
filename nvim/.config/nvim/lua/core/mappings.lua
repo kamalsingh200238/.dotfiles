@@ -5,12 +5,12 @@ vim.g.mapleader = " "
 -- Insert Mode
 map.set("i", "jk", "<Esc>", { desc = "" }, opts)
 
--- Normal mode
 map.set("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true })
 map.set("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true })
 map.set("n", "<Up>", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true })
 map.set("n", "<Down>", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true })
 
+-- quit and save
 map.set("n", "<leader>q", "<cmd>q<Cr>", { desc = "quit" }, opts)
 map.set("n", "<C-q>", "<cmd>q!<Cr>", { desc = "force quit" }, opts)
 map.set("n", "<leader>w", "<cmd>w<Cr>", { desc = "save file" }, opts)
@@ -25,8 +25,7 @@ map.set("n", "<C-a>", "gg<S-v>G", { desc = "select whole document" }, opts)
 map.set("n", "<leader><leader>s", "<cmd>source %<cr>", { desc = "source current file" }, opts)
 
 -- for better copy and paste
-map.set("n", "<leader>y", '"+y', { desc = "copy in clipboard" }, opts)
-map.set("v", "<leader>y", '"+y', { desc = "copy in clipboard" }, opts)
+map.set({ "n", "v" }, "<leader>y", '"+y', { desc = "copy in clipboard" }, opts)
 
 -- Split Window
 map.set("n", "ss", ":split<Return><C-w>w", { desc = "split window horizontally" })
@@ -36,24 +35,31 @@ map.set("n", "sv", ":vsplit<Return><C-w>w", { desc = "split vertically" }, opts)
 map.set("n", "<C-h>", function()
 	require("smart-splits").move_cursor_left()
 end, { desc = "change panel to left" }, opts)
+
 map.set("n", "<C-l>", function()
 	require("smart-splits").move_cursor_right()
 end, { desc = "change panel to right" }, opts)
+
 map.set("n", "<C-j>", function()
 	require("smart-splits").move_cursor_down()
 end, { desc = "change panel to up" }, opts)
+
 map.set("n", "<C-k>", function()
 	require("smart-splits").move_cursor_up()
 end, { desc = "change panel to down" }, opts)
+
 map.set("n", "H", function()
 	require("smart-splits").move_cursor_left()
 end, { desc = "change panel to left" }, opts)
+
 map.set("n", "L", function()
 	require("smart-splits").move_cursor_right()
 end, { desc = "change panel to right" }, opts)
+
 map.set("n", "J", function()
 	require("smart-splits").move_cursor_down()
 end, { desc = "change panel to up" }, opts)
+
 map.set("n", "K", function()
 	require("smart-splits").move_cursor_up()
 end, { desc = "change panel to down" }, opts)
@@ -71,12 +77,15 @@ end, { desc = "change panel to down" }, opts)
 map.set("n", "<C-up>", function()
 	require("smart-splits").resize_up()
 end, { desc = "resize window" }, opts)
+
 map.set("n", "<C-down>", function()
 	require("smart-splits").resize_down()
 end, { desc = "resize window" }, opts)
+
 map.set("n", "<C-left>", function()
 	require("smart-splits").resize_left()
 end, { desc = "resize window" }, opts)
+
 map.set("n", "<C-right>", function()
 	require("smart-splits").resize_right()
 end, { desc = "resize window" }, opts)
