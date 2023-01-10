@@ -4,7 +4,7 @@ return {
 	color_scheme = "Aci (Gogh)",
 
 	-- font
-	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium" }),
+	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
 	font_size = 14.0,
 
 	-- Window
