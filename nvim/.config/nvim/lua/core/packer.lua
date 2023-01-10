@@ -101,10 +101,14 @@ packer.startup(function(use)
 	-- colorschemes
 	use({ "tjdevries/colorbuddy.nvim" })
 	use({ "rose-pine/neovim" })
+	use({ "bluz71/vim-nightfly-colors" })
 	use({ "catppuccin/nvim" })
 	use({ "morhetz/gruvbox" })
-	use({ "bluz71/vim-nightfly-colors" })
+
 	use({ "LunarVim/synthwave84.nvim" })
+	use({ "LunarVim/horizon.nvim" })
+	use({ "LunarVim/tokyonight.nvim" })
+
 	use({ "Tsuzat/NeoSolarized.nvim" })
 	use({ "monsonjeremy/onedark.nvim", branch = "treesitter" })
 
