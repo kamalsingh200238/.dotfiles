@@ -1,4 +1,6 @@
-function ColorMyVi(color) 
+require("colors.colorschemes.rose-pine")
+
+function ColorMyVi(color)
 	color = color or "rose-pine"
 	vim.cmd.colorscheme(color)
 end

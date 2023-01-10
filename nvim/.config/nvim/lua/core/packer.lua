@@ -99,18 +99,14 @@ packer.startup(function(use)
 	use({ "mfussenegger/nvim-dap" })
 
 	-- colorschemes
-	use({
-		"tjdevries/colorbuddy.nvim",
-		config = function()
-			require("colorbuddy").setup()
-		end,
-	})
+	use({ "tjdevries/colorbuddy.nvim" })
 	use({ "rose-pine/neovim" })
 	use({ "catppuccin/nvim" })
-	use({ "folke/tokyonight.nvim" })
 	use({ "morhetz/gruvbox" })
 	use({ "bluz71/vim-nightfly-colors" })
-	use({ "monsonjeremy/onedark.nvim" , branch = 'treesitter' })
+	use({ "LunarVim/synthwave84.nvim" })
+	use({ "Tsuzat/NeoSolarized.nvim" })
+	use({ "monsonjeremy/onedark.nvim", branch = "treesitter" })
 
 	if packer_bootstrap then
 		require("packer").sync()
