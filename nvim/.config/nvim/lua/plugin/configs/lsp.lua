@@ -31,8 +31,8 @@ lsp.ensure_installed({
 lsp.on_attach(function(client, bufnr)
 	local bufopts = { noremap = true, silent = true, buffer = bufnr }
 
-	vim.keymap.set("n", "K", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentaion" }, bufopts)
-	vim.keymap.set("n", "<leader>lk", function()
+	-- vim.keymap.set("n", "<leader>k", "<Cmd>Lspsaga hover_doc<CR>", { desc = "Hover documentaion" }, bufopts)
+	vim.keymap.set("n", "K", function()
 		vim.lsp.buf.hover()
 	end, { desc = "Hover documentaion" }, bufopts)
 	-- goto
