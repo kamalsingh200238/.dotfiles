@@ -1,4 +1,5 @@
 require("colors.colorschemes.rose-pine")
+require("colors.colorschemes.neosolarized")
 
 function ColorMyVi(color)
 	color = color or "rose-pine"
