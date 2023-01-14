@@ -8,7 +8,7 @@ return {
 	-- color_scheme = "AyuDark (Gogh)",
 
 	-- font
-	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Bold" }),
+	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
 	font_size = 14.0,
 
 	-- Window
