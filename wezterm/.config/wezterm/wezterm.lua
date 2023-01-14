@@ -2,9 +2,13 @@ local wezterm = require("wezterm")
 return {
 	-- color_scheme
 	color_scheme = "Aci (Gogh)",
+	-- color_scheme = "Atelier Sulphurpool (base16)",
+	-- color_scheme = "AtelierSulphurpool",
+	-- color_scheme = "Aura (Gogh)",
+	-- color_scheme = "AyuDark (Gogh)",
 
 	-- font
-	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
+	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Bold" }),
 	font_size = 14.0,
 
 	-- Window
