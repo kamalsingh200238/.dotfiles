@@ -10,9 +10,12 @@ return {
 	-- font
 	-- font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrains Mono Nerd Font", weight = "Medium" },
-		{ family = "Fira Code Nerd Font", weight = "Medium" },
-		{ family = "HackNerd Font", weight = "Medium" },
+		{ family = "JetBrains Mono", weight = "Medium" },
+		-- { family = "Fira Code", weight = "Medium" },
+		-- { family = "Hack", weight = "Medium" },
+		{ family = "Symbols Nerd Font"},
+		{ family = "JoyPixels"},
+
 	}),
 
 	font_size = 14.0,
