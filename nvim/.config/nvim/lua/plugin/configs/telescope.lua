@@ -4,13 +4,17 @@ if not status_ok then
 	return
 end
 
+local actions = require("telescope.actions")
+
 telescope.setup({
 	defaults = {
 		prompt_prefix = "   ",
 		selection_caret = "  ",
 		entry_prefix = "  ",
+		sorting_strategy = "ascending",
 		layout_config = {
 			horizontal = {
+				prompt_position = "top",
 				preview_width = 0.4,
 				results_width = 0.6,
 			},
@@ -26,5 +30,12 @@ telescope.setup({
 		colorscheme = {
 			enable_preview = true,
 		},
+	},
+	mappings = {
+		i = {
+			["<C-j>"] = actions.cycle_history_next,
+			["<C-k>"] = actions.cycle_history_prev,
+		},
+		n = { ["q"] = actions.close },
 	},
 })
