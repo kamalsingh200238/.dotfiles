@@ -8,13 +8,19 @@ return {
 	-- color_scheme = "AyuDark (Gogh)",
 
 	-- font
-	font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
+	-- font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
+	font = wezterm.font_with_fallback({
+		{ family = "JetBrains Mono Nerd Font", weight = "Medium" },
+		{ family = "Fira Code Nerd Font", weight = "Medium" },
+		{ family = "HackNerd Font", weight = "Medium" },
+	}),
+
 	font_size = 14.0,
 
 	-- Window
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
-	window_background_opacity = 0.85,
+	window_background_opacity = 1,
 
 	window_padding = { -- For padding
 		left = 0,
