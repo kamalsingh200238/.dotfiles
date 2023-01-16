@@ -26,16 +26,20 @@ packer.startup(function(use)
 	use({ "lewis6991/impatient.nvim" })
 	-- essentials ------------------------]]]
 
+	use({ "nvim-tree/nvim-web-devicons" })
+
 	-- helpers --------------------------[[[
 	use({ "tpope/vim-surround" })
 	use({ "ThePrimeagen/harpoon" })
 	use({ "mbbill/undotree" })
 	use({ "mattn/emmet-vim" })
+	use({ "tpope/vim-fugitive" })
 	-- helpers --------------------------]]]
 
-	use({ "nvim-tree/nvim-tree.lua", tag = "nightly" })
-	use({ "nvim-telescope/telescope.nvim" })
-	use({
+	use({ "nvim-tree/nvim-tree.lua", tag = "nightly" }) -- explorer nvim-tree
+	use({ "nvim-telescope/telescope.nvim" }) -- fuzzy finder telescope
+
+	use({ -- tree sitter syntax highlighting
 		"nvim-treesitter/nvim-treesitter",
 		run = ":TSUpdate",
 		requires = {
@@ -48,6 +52,8 @@ packer.startup(function(use)
 			},
 			{ "p00f/nvim-ts-rainbow" },
 			{ "NvChad/nvim-colorizer.lua" },
+			{ "numToStr/Comment.nvim" },
+			{ "JoosepAlviste/nvim-ts-context-commentstring" }, -- better comments in jsx
 		},
 	})
 
@@ -81,10 +87,6 @@ packer.startup(function(use)
 		},
 	})
 
-	use({ "numToStr/Comment.nvim" })
-	use({ "JoosepAlviste/nvim-ts-context-commentstring" }) -- better comments in jsx
-
-	use({ "nvim-tree/nvim-web-devicons" })
 
 	use({ "nvim-lualine/lualine.nvim" })
 	use({ "akinsho/bufferline.nvim" })
