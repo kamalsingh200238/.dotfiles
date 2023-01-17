@@ -2,7 +2,7 @@ require("colors.colorschemes.rose-pine")
 require("colors.colorschemes.neosolarized")
 
 function ColorMyVi(color)
-	color = color or "rose-pine"
+	color = color or "horizon"
 	vim.cmd.colorscheme(color)
 end
 
