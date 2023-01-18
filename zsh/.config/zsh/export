@@ -1,0 +1,10 @@
+#!/bin/zsh
+
+export ABBR_USER_ABBREVIATIONS_FILE=~/.config/zsh/abbreviations
+#for loading in utf-8 so my tmux doesn't go crazy
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+export LANG=en_US.UTF-8
+export EDITOR="nvim"
+export PATH="$HOME/.local/bin:$PATH"
