@@ -1,4 +1,4 @@
-#antidote bundle < ~/.dotfiles/zsh/.zsh_plugins.txt > ~/.zsh_plugins.sh
+#antidote bundle < ~/.dotfiles/zsh/.zsh_plugins.txt > ~/.zsh_plugins.zsh
 
 romkatv/powerlevel10k
 

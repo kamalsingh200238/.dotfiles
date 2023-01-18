@@ -10,7 +10,7 @@ source ${ZDOTDIR:-~}/.antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
 antidote load
-source ~/.zsh_plugins.sh
+source ~/.zsh_plugins.zsh
 
 # For History
 HISTSIZE=10000
