@@ -19,6 +19,14 @@ require("lazy").setup({
 	"lewis6991/impatient.nvim",
 	-- essentials ------------------------]]]
 
+	-- helpers --------------------------[[[
+	"tpope/vim-surround",
+	"ThePrimeagen/harpoon",
+	"mbbill/undotree",
+	"mattn/emmet-vim",
+	"tpope/vim-fugitive",
+	-- helpers --------------------------]]]
+
 	{
 		"nvim-tree/nvim-web-devicons",
 		lazy = false,
@@ -28,31 +36,50 @@ require("lazy").setup({
 		end,
 	},
 
-	-- helpers --------------------------[[[
-	"tpope/vim-surround",
-	"ThePrimeagen/harpoon",
-	"mbbill/undotree",
-	"mattn/emmet-vim",
-	"tpope/vim-fugitive",
-	-- helpers --------------------------]]]
+	{
+		"nvim-tree/nvim-tree.lua",
+		tag = "nightly",
+		config = function()
+			require("plugin.configs.nvim-tree")
+		end,
+	}, -- explorer nvim-tree
 
-	{ "nvim-tree/nvim-tree.lua", tag = "nightly" }, -- explorer nvim-tree
-	"nvim-telescope/telescope.nvim", -- fuzzy finder telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		config = function()
+			require("plugin.configs.telescope")
+		end,
+	}, -- fuzzy finder telescope
 
 	{ -- tree sitter syntax highlighting
 		"nvim-treesitter/nvim-treesitter",
 		build = ":TSUpdate",
 		dependencies = {
 			{ "windwp/nvim-ts-autotag" },
+
 			{
 				"windwp/nvim-autopairs",
 				config = function()
 					require("nvim-autopairs").setup({})
 				end,
 			},
+
 			{ "p00f/nvim-ts-rainbow", lazy = false, priority = 1000 },
-			{ "NvChad/nvim-colorizer.lua" },
-			{ "numToStr/Comment.nvim" },
+
+			{
+				"NvChad/nvim-colorizer.lua",
+				config = function()
+					require("plugin.configs.nvim-colorizer")
+				end,
+			},
+
+			{
+				"numToStr/Comment.nvim",
+				config = function()
+					require("plugin.configs.comment")
+				end,
+			},
+
 			{ "JoosepAlviste/nvim-ts-context-commentstring" }, -- better comments in jsx
 		},
 		config = function()
@@ -62,6 +89,9 @@ require("lazy").setup({
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
+		config = function()
+			require("plugin.configs.lsp")
+		end,
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
@@ -69,11 +99,21 @@ require("lazy").setup({
 			{ "williamboman/mason-lspconfig.nvim" },
 
 			-- null ls
-			{ "jose-elias-alvarez/null-ls.nvim" },
+			{
+				"jose-elias-alvarez/null-ls.nvim",
+				config = function()
+					require("plugin.configs.null-ls")
+				end,
+			},
 			{ "jay-babu/mason-null-ls.nvim" },
 
 			-- Autocompletion
-			{ "hrsh7th/nvim-cmp" },
+			{
+				"hrsh7th/nvim-cmp",
+				config = function()
+					require("plugin.configs.cmp")
+				end,
+			},
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "saadparwaiz1/cmp_luasnip" },
@@ -81,22 +121,53 @@ require("lazy").setup({
 			{ "hrsh7th/cmp-nvim-lua" },
 
 			-- Snippets
-			{ "L3MON4D3/LuaSnip" },
+			{
+				"L3MON4D3/LuaSnip",
+				config = function()
+					require("plugin.configs.luasnip")
+				end,
+			},
 			{ "rafamadriz/friendly-snippets" },
 
 			-- Pretty lsp
 			{ "onsails/lspkind.nvim" },
-			{ "glepnir/lspsaga.nvim" },
+			{
+				"glepnir/lspsaga.nvim",
+				config = function()
+					require("plugin.configs.lspsaga")
+				end,
+			},
 		},
 	},
 
-	"nvim-lualine/lualine.nvim",
-	"akinsho/bufferline.nvim",
+	{
+		"nvim-lualine/lualine.nvim",
+		config = function()
+			require("plugin.configs.lualine")
+		end,
+	},
+
+	{
+		"akinsho/bufferline.nvim",
+		config = function()
+			require("plugin.configs.bufferline")
+		end,
+	},
 	"mrjones2014/smart-splits.nvim",
 
-	"lukas-reineke/indent-blankline.nvim",
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		config = function()
+			require("plugin.configs.indent-line")
+		end,
+	},
 
-	"lewis6991/gitsigns.nvim",
+	{
+		"lewis6991/gitsigns.nvim",
+		config = function()
+			require("plugin.configs.git-sign")
+		end,
+	},
 	"dinhhuy258/git.nvim",
 
 	-- dap
@@ -106,12 +177,17 @@ require("lazy").setup({
 	"rose-pine/neovim",
 	"bluz71/vim-nightfly-colors",
 	"catppuccin/nvim",
-	"morhetz/gruvbox",
+	"EdenEast/nightfox.nvim",
+	"savq/melange-nvim",
+	"sainnhe/sonokai",
+	"sainnhe/everforest",
+	"sainnhe/edge",
+	"rebelot/kanagawa.nvim",
+	"sainnhe/gruvbox-material",
 
 	"LunarVim/synthwave84.nvim",
 	"LunarVim/horizon.nvim",
 	"LunarVim/tokyonight.nvim",
 
-	"Tsuzat/NeoSolarized.nvim",
 	{ "monsonjeremy/onedark.nvim", branch = "treesitter" },
 })
