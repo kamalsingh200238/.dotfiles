@@ -91,10 +91,10 @@ map.set("n", "<C-right>", function()
 end, { desc = "resize window" }, opts)
 
 -- Packer
-map.set("n", "<leader>ps", "<cmd>PackerSync<Cr>", { desc = "packer sync" }, opts)
-map.set("n", "<leader>pS", "<cmd>PackerStatus<Cr>", { desc = "packer status" }, opts)
-map.set("n", "<leader>pc", "<cmd>PackerCompile<Cr>", { desc = "packer compile" }, opts)
-map.set("n", "<leader>pC", "<cmd>PackerClean<Cr>", { desc = "packer clean" }, opts)
+-- map.set("n", "<leader>ps", "<cmd>PackerSync<Cr>", { desc = "packer sync" }, opts)
+-- map.set("n", "<leader>pS", "<cmd>PackerStatus<Cr>", { desc = "packer status" }, opts)
+-- map.set("n", "<leader>pc", "<cmd>PackerCompile<Cr>", { desc = "packer compile" }, opts)
+-- map.set("n", "<leader>pC", "<cmd>PackerClean<Cr>", { desc = "packer clean" }, opts)
 
 -- For buffers
 map.set("n", "<Tab>", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" }, opts)
