@@ -19,11 +19,6 @@ HISTFILE=~/.cache/zsh/.zsh_history
 
 #for Zoxide
 eval "$(zoxide init zsh)"
-
-#my aliases 
-# source ~/.config/zsh/alias
-# source ~/.config/zsh/export
-
 export ABBR_USER_ABBREVIATIONS_FILE=~/.config/zsh/abbreviations
 #for loading in utf-8 so my tmux doesn't go crazy
 export LC_CTYPE=en_US.UTF-8
@@ -54,8 +49,9 @@ alias nixq="nix-env -q"
 #for good movement
 bindkey "^[[1;5C" forward-word
 bindkey "^[[1;5D" backward-word
-bindkey "^[[A" history-substring-search-up
-bindkey "^[[B" history-substring-search-down
+bindkey "^k" history-substring-search-up
+bindkey "^j" history-substring-search-down
+bindkey "^ " autosuggest-accept
 
 lfcd () {
     tmp="$(mktemp)"
