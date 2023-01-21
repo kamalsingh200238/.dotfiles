@@ -3,7 +3,7 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
 -- Insert Mode
-map.set("i", "jk", "<Esc>", { desc = "" }, opts)
+-- map.set("i", "jk", "<Esc>", { desc = "" }, opts)
 
 map.set("n", "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true })
 map.set("n", "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true })
