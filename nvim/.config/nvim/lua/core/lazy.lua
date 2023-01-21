@@ -39,17 +39,9 @@ require("lazy").setup({
 	{
 		"nvim-tree/nvim-tree.lua",
 		tag = "nightly",
-		config = function()
-			require("plugin.configs.nvim-tree")
-		end,
 	}, -- explorer nvim-tree
 
-	{
-		"nvim-telescope/telescope.nvim",
-		config = function()
-			require("plugin.configs.telescope")
-		end,
-	}, -- fuzzy finder telescope
+	{ "nvim-telescope/telescope.nvim" }, -- fuzzy finder telescope
 
 	{ -- tree sitter syntax highlighting
 		"nvim-treesitter/nvim-treesitter",
@@ -66,29 +58,18 @@ require("lazy").setup({
 
 			{ "p00f/nvim-ts-rainbow", lazy = false, priority = 1000 },
 
-			{
-				"NvChad/nvim-colorizer.lua",
-				config = function()
-					require("plugin.configs.nvim-colorizer")
-				end,
-			},
+			{ "NvChad/nvim-colorizer.lua" },
 
-			{
-				"numToStr/Comment.nvim",
-				config = function()
-					require("plugin.configs.comment")
-				end,
-			},
+			{ "numToStr/Comment.nvim" },
 
 			{ "JoosepAlviste/nvim-ts-context-commentstring" }, -- better comments in jsx
 		},
-		config = function()
-			require("plugin.configs.treesitter")
-		end,
 	},
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
+		lazy = false,
+		priority = 1000,
 		config = function()
 			require("plugin.configs.lsp")
 		end,
@@ -101,19 +82,11 @@ require("lazy").setup({
 			-- null ls
 			{
 				"jose-elias-alvarez/null-ls.nvim",
-				config = function()
-					require("plugin.configs.null-ls")
-				end,
 			},
 			{ "jay-babu/mason-null-ls.nvim" },
 
 			-- Autocompletion
-			{
-				"hrsh7th/nvim-cmp",
-				config = function()
-					require("plugin.configs.cmp")
-				end,
-			},
+			{ "hrsh7th/nvim-cmp" },
 			{ "hrsh7th/cmp-buffer" },
 			{ "hrsh7th/cmp-path" },
 			{ "saadparwaiz1/cmp_luasnip" },
@@ -121,53 +94,23 @@ require("lazy").setup({
 			{ "hrsh7th/cmp-nvim-lua" },
 
 			-- Snippets
-			{
-				"L3MON4D3/LuaSnip",
-				config = function()
-					require("plugin.configs.luasnip")
-				end,
-			},
+			{ "L3MON4D3/LuaSnip" },
 			{ "rafamadriz/friendly-snippets" },
 
 			-- Pretty lsp
 			{ "onsails/lspkind.nvim" },
-			{
-				"glepnir/lspsaga.nvim",
-				config = function()
-					require("plugin.configs.lspsaga")
-				end,
-			},
+			{ "glepnir/lspsaga.nvim" },
 		},
 	},
 
-	{
-		"nvim-lualine/lualine.nvim",
-		config = function()
-			require("plugin.configs.lualine")
-		end,
-	},
+	{ "nvim-lualine/lualine.nvim" },
 
-	{
-		"akinsho/bufferline.nvim",
-		config = function()
-			require("plugin.configs.bufferline")
-		end,
-	},
+	{ "akinsho/bufferline.nvim" },
 	"mrjones2014/smart-splits.nvim",
 
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		config = function()
-			require("plugin.configs.indent-line")
-		end,
-	},
+	{ "lukas-reineke/indent-blankline.nvim" },
 
-	{
-		"lewis6991/gitsigns.nvim",
-		config = function()
-			require("plugin.configs.git-sign")
-		end,
-	},
+	{ "lewis6991/gitsigns.nvim" },
 	"dinhhuy258/git.nvim",
 
 	-- dap
