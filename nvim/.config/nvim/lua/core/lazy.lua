@@ -68,11 +68,6 @@ require("lazy").setup({
 
 	{
 		"VonHeikemen/lsp-zero.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("plugin.configs.lsp")
-		end,
 		dependencies = {
 			-- LSP Support
 			{ "neovim/nvim-lspconfig" },
