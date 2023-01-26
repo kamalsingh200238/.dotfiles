@@ -14,11 +14,11 @@ telescope.setup({
     sorting_strategy = "ascending",
     layout_config = {
       horizontal = {
-        preview_width = 0.4,
-        results_width = 0.6,
+        preview_width = 0.5,
+        results_width = 0.5,
       },
       prompt_position = "top",
-      width = 0.80,
+      width = 0.90,
       height = 0.99,
       preview_cutoff = 120,
     },
