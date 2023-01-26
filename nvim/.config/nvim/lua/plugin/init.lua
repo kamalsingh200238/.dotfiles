@@ -1,6 +1,7 @@
 require("plugin.configs.telescope")
 require("plugin.configs.treesitter")
 require("plugin.configs.nvim-tree")
+require("plugin.configs.lsp")
 require("plugin.configs.cmp")
 require("plugin.configs.lspsaga")
 require("plugin.configs.luasnip")
