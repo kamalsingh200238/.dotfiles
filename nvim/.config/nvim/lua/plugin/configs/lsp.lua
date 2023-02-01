@@ -46,15 +46,12 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "<space>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "format code" }, bufopts)
 
   -- workspace
-  vim.keymap.set("n", "<space>lwa", function() vim.lsp.buf.add_workspace_folder() end, { desc = "add workspace" },
-    bufopts)
-  vim.keymap.set("n", "<space>lwr", function() vim.lsp.buf.remove_workspace_folder() end, { desc = "remove workspace" },
-    bufopts)
-  vim.keymap.set("n", "<space>lwl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end,
-    { desc = "list all workspace" }, bufopts)
+  vim.keymap.set("n", "<space>lwa", function() vim.lsp.buf.add_workspace_folder() end, { desc = "add workspace" }, bufopts)
+  vim.keymap.set("n", "<space>lwr", function() vim.lsp.buf.remove_workspace_folder() end, { desc = "remove workspace" }, bufopts)
+  vim.keymap.set("n", "<space>lwl", function() print(vim.inspect(vim.lsp.buf.list_workspace_folders())) end, { desc = "list all workspace" }, bufopts)
 
   -- diagnostics
-  vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, { desc = "hover diagnostic" }, bufopts)
+  vim.keymap.set("n", "[f", function() vim.diagnostic.open_float() end, { desc = "hover diagnostic" }, bufopts)
   -- vim.keymap.set("n", "[l", "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = "line diagnostics lspsaga" }, bufopts)
   -- vim.keymap.set("n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
 end)
