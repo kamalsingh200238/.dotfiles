@@ -36,11 +36,11 @@ vim.diagnostic.config({
   severity_sort = true,
   float = {
     focusable = true,
-    style = 'minimal',
-    border = 'rounded',
-    source = 'always',
-    header = '',
-    prefix = '',
+    style = "minimal",
+    border = "rounded",
+    source = "always",
+    header = "",
+    prefix = "",
   },
 })
 
@@ -69,7 +69,7 @@ lsp.on_attach(function(client, bufnr)
 	-- diagnostics
 	vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, { desc = "hover diagnostic" }, bufopts)
 	vim.keymap.set("n", "[l", "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = "line diagnostics lspsaga" }, bufopts)
-	vim.keymap.set("n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
+	vim.keymap.set( "n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
 end)
 
 lsp.configure("sumneko_lua", {
