@@ -1,54 +1,44 @@
 local o = vim.opt
 local g = vim.g
 
-vim.cmd("autocmd!")
+-- encoding
 vim.scriptencoding = "utf-8"
-vim.wo.number = true
-
 o.encoding = "utf-8"
 o.fileencoding = "utf-8"
-
-g.snippets = "luasnip" -- for snippets
-
-o.number = true
-o.relativenumber = true
-
-o.signcolumn = "yes" -- for space on left hand side
-o.timeoutlen = 500
-
-o.title = true
-
--- indent
-o.autoindent = true
-o.smartindent = true
-o.breakindent = true
-
+o.backspace = vim.opt.backspace + { "nostop" }
+o.cmdheight = 1
+o.completeopt = { "menu", "menuone", "noselect" }
+o.cursorline = true
 -- tab
+o.expandtab = true
 o.smarttab = true
 o.shiftwidth = 2
 o.tabstop = 2
-
-o.formatoptions = "cro"
-o.hlsearch = true
-o.backup = false
-o.showcmd = true
-o.cmdheight = 1
-o.laststatus = 2
-o.expandtab = true
+-- indent
+o.copyindent = true -- Copy the previous indentation on autoindenting
+o.autoindent = true
+o.smartindent = true
+o.breakindent = true
+o.number = true
+o.relativenumber = true
+o.signcolumn = "yes" -- for space on left hand side
+o.timeoutlen = 500
 o.scrolloff = 8
-o.backupskip = { "/tmp/*", "/private/tmp/*" }
-o.inccommand = "split"
+o.sidescrolloff = 8 -- Number of columns to keep at the sides of the cursor
+o.hlsearch = true
 o.ignorecase = true -- Case insensitive searching UNLESS /C or capital in search
+o.smartcase = true
+o.undofile = true -- Enable persistent undo
+o.backup = false
+o.writebackup = false -- Disable making a backup before overwriting a file
 o.wrap = false -- No Wrap lines
-o.backspace = { "start", "eol", "indent" }
-o.path:append({ "**" }) -- Finding files - Search down into subfolders
-o.wildignore:append({ "*/node_modules/*" })
-
+o.laststatus = 3 -- globalstatus
+o.pumheight = 10 -- Height of the pop up menu
 -- For Colors
-o.completeopt = { "menu", "menuone", "noselect" }
-o.cursorline = true
+o.fillchars = { eob = " " } -- Disable `~` on nonexistent lines
 o.termguicolors = true
-o.winblend = 0
-o.wildoptions = "pum"
-o.pumblend = 5
 o.background = "dark"
+
+g.snippets = "luasnip" -- for snippets
+g.highlighturl_enabled = true -- highlight URLs by default
+g.mapleader= " "

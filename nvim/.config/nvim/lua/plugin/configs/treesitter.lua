@@ -27,15 +27,15 @@ ts.setup({
 	},
 	-- Colored brackets
 	rainbow = {
-		enable = true,
+		enable = false,
 		extended_mode = false,
-		colors = {
-			"#ebb434",
-			"#14fc03",
-			"#21baed",
-			"#ffffff",
-			"#862dfc",
-		},
+		-- colors = {
+		-- 	"#ebb434",
+		-- 	"#14fc03",
+		-- 	"#21baed",
+		-- 	"#ffffff",
+		-- 	"#862dfc",
+		-- },
 	},
 	context_commentstring = {
 		enable = true,
