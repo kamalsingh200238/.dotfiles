@@ -36,15 +36,14 @@ lsp.on_attach(function(client, bufnr)
   vim.keymap.set("n", "gD", function() vim.lsp.buf.declaration() end, { desc = "goto declaration" }, bufopts)
   vim.keymap.set("n", "gT", "<Cmd>Telescope lsp_type_definitions<Cr>", { desc = "goto type_definition" }, bufopts)
   vim.keymap.set("n", "gi", "<Cmd>Telescope lsp_implementations<Cr>", { desc = "goto implementation" }, bufopts)
-  vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", { desc = "goto peek_definition" }, bufopts)
+  -- vim.keymap.set("n", "gp", "<Cmd>Lspsaga peek_definition<CR>", { desc = "goto peek_definition" }, bufopts)
   vim.keymap.set("n", "gr", "<Cmd>Telescope lsp_references<Cr>", { desc = "goto references" }, bufopts)
-  vim.keymap.set("n", "gl", "<Cmd>Lspsaga lsp_finder<CR>", { desc = "lspsaga lsp finder" }, bufopts)
+  -- vim.keymap.set("n", "gl", "<Cmd>Lspsaga lsp_finder<CR>", { desc = "lspsaga lsp finder" }, bufopts)
 
   vim.keymap.set("n", "<leader>lr", function() vim.lsp.buf.rename() end, { desc = "traditional rename by lsp" }, bufopts)
   vim.keymap.set("n", "<leader>ls", function() vim.lsp.buf.signature_help() end, { desc = "lsp signature" }, bufopts)
   vim.keymap.set("n", "<space>lc", function() vim.lsp.buf.code_action() end, { desc = "code actions by lsp" }, bufopts)
   vim.keymap.set("n", "<space>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "format code" }, bufopts)
-  vim.keymap.set("v", "<space>lf", function() vim.lsp.buf.format({ async = true }) end, { desc = "format code" }, bufopts)
 
   -- workspace
   vim.keymap.set("n", "<space>lwa", function() vim.lsp.buf.add_workspace_folder() end, { desc = "add workspace" },
@@ -56,8 +55,8 @@ lsp.on_attach(function(client, bufnr)
 
   -- diagnostics
   vim.keymap.set("n", "<leader>df", function() vim.diagnostic.open_float() end, { desc = "hover diagnostic" }, bufopts)
-  vim.keymap.set("n", "[l", "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = "line diagnostics lspsaga" }, bufopts)
-  vim.keymap.set("n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
+  -- vim.keymap.set("n", "[l", "<cmd>Lspsaga show_line_diagnostics<cr>", { desc = "line diagnostics lspsaga" }, bufopts)
+  -- vim.keymap.set("n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
 end)
 
 lsp.configure("sumneko_lua", {
