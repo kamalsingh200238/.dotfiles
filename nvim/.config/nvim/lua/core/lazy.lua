@@ -23,6 +23,7 @@ require("lazy").setup({
   "mbbill/undotree",
   "mattn/emmet-vim",
   "tpope/vim-fugitive",
+  "ggandor/leap.nvim",
   -- helpers --------------------------]]]
 
   {
