@@ -38,7 +38,7 @@ alias vi="nvim"
 # for my dotfiles
 alias myzsh="nvim ~/.zshrc"
 alias myvi="cd ~/.config/nvim && vi"
-alias prd="pnpm run dev"
+alias prd="pnpm dev"
 alias avi="nvim -u ~/.config/astronvim/entry.lua"
 # for tmux
 alias tks="tmux kill-server"
