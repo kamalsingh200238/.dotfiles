@@ -1,129 +1,153 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+	vim.fn.system({
+		"git",
+		"clone",
+		"--filter=blob:none",
+		"https://github.com/folke/lazy.nvim.git",
+		"--branch=stable", -- latest stable release
+		lazypath,
+	})
 end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-  -- essentials ------------------------[[[
-  "nvim-lua/plenary.nvim",
-  "lewis6991/impatient.nvim",
-  -- essentials ------------------------]]]
+	-- essentials ------------------------[[[
+	{ "nvim-lua/plenary.nvim", lazy = true },
+	"lewis6991/impatient.nvim",
+	-- essentials ------------------------]]]
 
-  -- helpers --------------------------[[[
-  "tpope/vim-surround",
-  "ThePrimeagen/harpoon",
-  "mbbill/undotree",
-  "mattn/emmet-vim",
-  "tpope/vim-fugitive",
-  "ggandor/leap.nvim",
-  -- helpers --------------------------]]]
+	-- helpers --------------------------[[[
+	"tpope/vim-surround",
+	"ThePrimeagen/harpoon",
+	"mbbill/undotree",
+	"mattn/emmet-vim",
+	"tpope/vim-fugitive",
+	"ggandor/leap.nvim",
+	-- helpers --------------------------]]]
 
-  {
-    "nvim-tree/nvim-web-devicons",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      require("plugin.configs.web-dev-icons")
-    end,
-  },
+	{
+		"nvim-tree/nvim-web-devicons",
+		lazy = false,
+		priority = 1000,
+		config = function()
+			require("plugin.configs.web-dev-icons")
+		end,
+	},
 
-  {
-    "nvim-tree/nvim-tree.lua",
-    tag = "nightly",
-  }, -- explorer nvim-tree
+	{
+		"nvim-tree/nvim-tree.lua",
+		tag = "nightly",
+	},
 
-  { "nvim-telescope/telescope.nvim" }, -- fuzzy finder telescope
+	{
+		"nvim-telescope/telescope.nvim",
+		cmd = "Telescope",
+		config = function()
+			require("plugin.configs.telescope")
+		end,
+	},
 
-  { -- tree sitter syntax highlighting
-    "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    dependencies = {
-      { "windwp/nvim-ts-autotag" },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		event = "BufReadPost",
+		config = function()
+			require("plugin.configs.treesitter")
+		end,
+		dependencies = {
+			{ "windwp/nvim-ts-autotag" },
+			{
+				"windwp/nvim-autopairs",
+				config = function()
+					require("nvim-autopairs").setup({})
+				end,
+			},
+			{ "p00f/nvim-ts-rainbow" },
+			{ "NvChad/nvim-colorizer.lua" },
+			{ "numToStr/Comment.nvim" },
+			{ "JoosepAlviste/nvim-ts-context-commentstring" },
+		},
+	},
 
-      {
-        "windwp/nvim-autopairs",
-        config = function()
-          require("nvim-autopairs").setup({})
-        end,
-      },
+	{
+		"VonHeikemen/lsp-zero.nvim",
+		dependencies = {
+			-- LSP Support
+			{ "neovim/nvim-lspconfig" },
+			{ "williamboman/mason.nvim" },
+			{ "williamboman/mason-lspconfig.nvim" },
 
-      { "p00f/nvim-ts-rainbow" },
+			-- null ls
+			{ "jose-elias-alvarez/null-ls.nvim" },
+			{ "jay-babu/mason-null-ls.nvim" },
 
-      { "NvChad/nvim-colorizer.lua" },
+			-- Autocompletion
+			{ "hrsh7th/nvim-cmp" },
+			{ "hrsh7th/cmp-buffer" },
+			{ "hrsh7th/cmp-path" },
+			{ "saadparwaiz1/cmp_luasnip" },
+			{ "hrsh7th/cmp-nvim-lsp" },
+			{ "hrsh7th/cmp-nvim-lua" },
 
-      { "numToStr/Comment.nvim" },
+			-- Snippets
+			{ "L3MON4D3/LuaSnip" },
+			{ "rafamadriz/friendly-snippets" },
 
-      { "JoosepAlviste/nvim-ts-context-commentstring" }, -- better comments in jsx
-    },
-  },
+			-- Pretty lsp
+			{ "onsails/lspkind.nvim" },
+		},
+	},
 
-  {
-    "VonHeikemen/lsp-zero.nvim",
-    dependencies = {
-      -- LSP Support
-      { "neovim/nvim-lspconfig" },
-      { "williamboman/mason.nvim" },
-      { "williamboman/mason-lspconfig.nvim" },
+	{
+		"nvim-lualine/lualine.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugin.configs.lualine")
+		end,
+	},
 
-      -- null ls
-      {
-        "jose-elias-alvarez/null-ls.nvim",
-      },
-      { "jay-babu/mason-null-ls.nvim" },
+	{
+		"akinsho/bufferline.nvim",
+		event = "VeryLazy",
+		config = function()
+			require("plugin.configs.bufferline")
+		end,
+	},
 
-      -- Autocompletion
-      { "hrsh7th/nvim-cmp" },
-      { "hrsh7th/cmp-buffer" },
-      { "hrsh7th/cmp-path" },
-      { "saadparwaiz1/cmp_luasnip" },
-      { "hrsh7th/cmp-nvim-lsp" },
-      { "hrsh7th/cmp-nvim-lua" },
+	{ "mrjones2014/smart-splits.nvim" },
 
-      -- Snippets
-      { "L3MON4D3/LuaSnip" },
-      { "rafamadriz/friendly-snippets" },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		event = "BufReadPost",
+		config = function()
+			require("plugin.configs.indent-line")
+		end,
+	},
 
-      -- Pretty lsp
-      { "onsails/lspkind.nvim" },
-      { "glepnir/lspsaga.nvim" },
-    },
-  },
+	{
+		"lewis6991/gitsigns.nvim",
+		event = "BufReadPre",
+		config = function()
+			require("plugin.configs.git-sign")
+		end,
+	},
+	{ "dinhhuy258/git.nvim" },
 
-  { "nvim-lualine/lualine.nvim" },
+	{ "mfussenegger/nvim-dap" },
 
-  { "akinsho/bufferline.nvim" },
-  "mrjones2014/smart-splits.nvim",
-
-  { "lukas-reineke/indent-blankline.nvim" },
-
-  { "lewis6991/gitsigns.nvim" },
-  "dinhhuy258/git.nvim",
-
-  -- dap
-  "mfussenegger/nvim-dap",
-
-  -- colorschemes
-  "rose-pine/neovim",
-  "bluz71/vim-nightfly-colors",
-  "catppuccin/nvim",
-  "EdenEast/nightfox.nvim",
-  "savq/melange-nvim",
-  "sainnhe/sonokai",
-  "sainnhe/everforest",
-  "sainnhe/edge",
-  "rebelot/kanagawa.nvim",
-  "sainnhe/gruvbox-material",
-
-  "LunarVim/synthwave84.nvim",
-  "LunarVim/horizon.nvim",
-  "LunarVim/tokyonight.nvim",
-  "olimorris/onedarkpro.nvim",
+	-- colorschemes
+	{ "rose-pine/neovim" },
+	{ "bluz71/vim-nightfly-colors" },
+	{ "catppuccin/nvim" },
+	{ "EdenEast/nightfox.nvim" },
+	{ "savq/melange-nvim" },
+	{ "sainnhe/sonokai" },
+	{ "sainnhe/everforest" },
+	{ "rebelot/kanagawa.nvim" },
+	{ "sainnhe/gruvbox-material" },
+	{ "LunarVim/synthwave84.nvim" },
+	{ "LunarVim/horizon.nvim" },
+	{ "LunarVim/tokyonight.nvim" },
+	{ "olimorris/onedarkpro.nvim" },
 })
