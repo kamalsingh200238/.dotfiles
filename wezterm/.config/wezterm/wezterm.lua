@@ -10,27 +10,22 @@ return {
 	-- font
 	-- font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
 	font = wezterm.font_with_fallback({
-		{ family = "Iosevka", weight = "Medium", line_height = 1.0 },
-		{ family = "Cascadia Code", weight = "Medium", line_height = 1.1 },
-		{ family = "JetBrains Mono", weight = "Medium", line_height = 1.0 },
+		{ family = "JetBrains Mono", weight = "Medium" },
+		{ family = "Cascadia Code", weight = "Medium" },
 		{ family = "Symbols Nerd Font" },
 		{ family = "JoyPixels" },
 	}),
-
-	font_size = 16.0,
-
+	font_size = 14.0,
 	-- Window
 	window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
 	window_background_opacity = 1,
-
 	window_padding = { -- For padding
 		left = 0,
 		right = 0,
 		top = 0,
 		bottom = 0,
 	},
-
 	-- Tabs
 	hide_tab_bar_if_only_one_tab = true,
 	tab_bar_at_bottom = false,
