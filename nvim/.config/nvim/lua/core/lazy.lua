@@ -24,6 +24,7 @@ require("lazy").setup({
 	"mattn/emmet-vim",
 	"tpope/vim-fugitive",
 	"ggandor/leap.nvim",
+	"lervag/vimtex",
 	-- helpers --------------------------]]]
 
 	{
