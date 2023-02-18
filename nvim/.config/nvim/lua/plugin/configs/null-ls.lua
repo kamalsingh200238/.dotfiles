@@ -11,6 +11,7 @@ null_ls.setup({
     -- Formaters
     formatting.stylua, -- for lua
     formatting.prettier, -- for web dev
+    formatting.latexindent, -- for web dev
     -- diagnostics
     diagnostics.eslint,
     -- code actions
