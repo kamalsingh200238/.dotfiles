@@ -25,7 +25,7 @@ lsp.set_preferences({
 lsp.ensure_installed({
   "tsserver",
   "tailwindcss",
-  "sumneko_lua",
+  "lua_ls",
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -56,7 +56,7 @@ lsp.on_attach(function(client, bufnr)
   -- vim.keymap.set("n", "[c", "<cmd>Lspsaga show_cursor_diagnostics<cr>", { desc = "cursor diagnostics lspsaga" }, bufopts)
 end)
 
-lsp.configure("sumneko_lua", {
+lsp.configure("lua_ls", {
   settings = {
     Lua = {
       diagnostics = {
