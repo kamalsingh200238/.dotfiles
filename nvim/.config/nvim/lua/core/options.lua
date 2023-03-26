@@ -38,7 +38,12 @@ o.pumheight = 10 -- Height of the pop up menu
 o.fillchars = { eob = " " } -- Disable `~` on nonexistent lines
 o.termguicolors = true
 o.background = "dark"
+o.linebreak=true -- when set wrap will not break the work in middle
 
 g.snippets = "luasnip" -- for snippets
 g.highlighturl_enabled = true -- highlight URLs by default
 g.mapleader= " "
+
+if vim.g.neovide then
+  vim.o.guifont = "JetBrains Mono:h14" -- text below applies for VimScript
+end

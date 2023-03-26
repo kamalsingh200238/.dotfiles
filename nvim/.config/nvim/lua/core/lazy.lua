@@ -24,8 +24,10 @@ require("lazy").setup({
 	"mattn/emmet-vim",
 	"tpope/vim-fugitive",
 	"ggandor/leap.nvim",
+	"phaazon/hop.nvim",
 	"lervag/vimtex",
 	-- helpers --------------------------]]]
+	"j-hui/fidget.nvim",
 
 	{
 		"nvim-tree/nvim-web-devicons",

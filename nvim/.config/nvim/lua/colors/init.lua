@@ -1,5 +1,5 @@
 function ColorMyVi(color)
-	color = color or "horizon"
+	color = color or "onedark_vivid"
 	vim.cmd.colorscheme(color)
 end
 

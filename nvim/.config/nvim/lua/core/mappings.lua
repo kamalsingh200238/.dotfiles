@@ -2,15 +2,16 @@ local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 vim.g.mapleader = " "
 
-map("n", "j", 'v:count || mode(2)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true, silent = true })
-map("n", "k", 'v:count || mode(2)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true, silent = true })
-map("n", "<Up>", 'v:count || mode(2)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true, silent = true })
-map("n", "<Down>", 'v:count || mode(2)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true, silent = true })
+map({ "n", "v" }, "j", 'v:count || mode(2)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true, silent = true })
+map({ "n", "v" }, "k", 'v:count || mode(2)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true, silent = true })
+map({ "n", "v" }, "<Up>", 'v:count || mode(2)[0:1] == "no" ? "k" : "gk"', { desc = "", expr = true, silent = true })
+map({ "n", "v" }, "<Down>", 'v:count || mode(2)[0:1] == "no" ? "j" : "gj"', { desc = "", expr = true, silent = true })
 
 -- quit and save
 map("n", "<leader>q", "<cmd>q<Cr>", { desc = "quit" }, opts)
 map("n", "<C-q>", "<cmd>q!<Cr>", { desc = "force quit" }, opts)
 map("n", "<leader>w", "<cmd>w<Cr>", { desc = "save file" }, opts)
+map("n", "<leader>tw", "<cmd>set wrap!<Cr>", { desc = "save file" }, opts)
 
 map("n", "<ESC>", "<cmd>noh<Cr>", { desc = "remove search highligting" }, opts)
 map("n", "+", "<C-a>", { desc = "increase count" }, opts)
