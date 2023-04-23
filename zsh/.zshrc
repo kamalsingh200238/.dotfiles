@@ -34,7 +34,6 @@ alias gb="cd .."
 alias gh="cd ~/"
 alias fzd="cd \$(find * -type d | fzf)"
 alias exa="exa -all"
-# alias lf="lfrun"
 alias lg="lazygit"
 alias vi="nvim"
 
@@ -46,20 +45,6 @@ bindkey "^[[1;5D" backward-word
 bindkey "^k" history-substring-search-up
 bindkey "^j" history-substring-search-down
 bindkey "^ " autosuggest-accept
-
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
