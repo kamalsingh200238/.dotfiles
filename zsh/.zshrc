@@ -32,7 +32,7 @@ export PATH="$HOME/.local/bin:$PATH"
 
 alias gb="cd .."
 alias gh="cd ~/"
-alias fzd="cd \$(find * -type d | fzf)"
+alias fzfd="cd \$(find * -type d | fzf)"
 alias exa="exa -all"
 alias lg="lazygit"
 alias vi="nvim"
