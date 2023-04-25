@@ -5,19 +5,74 @@ return {
     opts = function(_, opts)
       -- customize the dashboard header
       opts.section.header.val = {
-        " █████  ███████ ████████ ██████   ██████",
-        "██   ██ ██         ██    ██   ██ ██    ██",
-        "███████ ███████    ██    ██████  ██    ██",
-        "██   ██      ██    ██    ██   ██ ██    ██",
-        "██   ██ ███████    ██    ██   ██  ██████",
-        " ",
-        "    ███    ██ ██    ██ ██ ███    ███",
-        "    ████   ██ ██    ██ ██ ████  ████",
-        "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        "    ██   ████   ████   ██ ██      ██",
+        "           ▄ ▄                   ",
+        "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+        "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+        "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+        "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+        "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+        "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+        "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+        "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+        -- " █████  ███████ ████████ ██████   ██████",
+        -- "██   ██ ██         ██    ██   ██ ██    ██",
+        -- "███████ ███████    ██    ██████  ██    ██",
+        -- "██   ██      ██    ██    ██   ██ ██    ██",
+        -- "██   ██ ███████    ██    ██   ██  ██████",
+        -- " ",
+        -- "    ███    ██ ██    ██ ██ ███    ███",
+        -- "    ████   ██ ██    ██ ██ ████  ████",
+        -- "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
+        -- "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
+        -- "    ██   ████   ████   ██ ██      ██",
       }
       return opts
+    end,
+  },
+  {
+    -- override nvim-cmp plugin
+    "hrsh7th/nvim-cmp",
+    -- override the options table that is used in the `require("cmp").setup()` call
+    opts = function(_, opts)
+      -- opts parameter is the default options table
+      -- the function is lazy loaded so cmp is able to be required
+      local cmp = require "cmp"
+      local luasnip = pcall(require, "luasnip")
+      -- modify the mapping part of the table
+      -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
+      opts.preselect = cmp.PreselectMode.Item
+      opts.mapping["<CR>"] = cmp.mapping.confirm { select = true }
+      opts.mapping["<Tab>"] = nil
+      opts.mapping["<S-Tab>"] = nil
+      opts.mapping["<C-k>"] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+      opts.mapping["<C-j>"] = cmp.mapping(function(fallback)
+        if luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+
+      -- return the new table to be used
+      return opts
+    end,
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function(_, opts)
+      local actions = require "telescope.actions"
+      opts.defaults.mappings.i = {
+        ["<C-j>"] = actions.cycle_history_next,
+        ["<C-k>"] = actions.cycle_history_prev,
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
+      }
     end,
   },
   -- You can disable default plugins as follows:
