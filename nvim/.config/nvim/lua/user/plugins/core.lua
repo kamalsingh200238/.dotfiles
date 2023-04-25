@@ -37,9 +37,24 @@ return {
       -- opts parameter is the default options table
       -- the function is lazy loaded so cmp is able to be required
       local cmp = require "cmp"
-      local luasnip = pcall(require, "luasnip")
+      local luasnip = require "luasnip"
+      local lspkind = require "lspkind"
       -- modify the mapping part of the table
       -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
+      opts.formatting = {
+        fields = { "abbr", "kind" },
+        format = lspkind.cmp_format {
+          mode = "symbol_text", -- show only symbol annotations
+          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          -- before = function (entry, vim_item)
+          --   ...
+          --   return vim_item
+          -- end
+        },
+      }
       opts.preselect = cmp.PreselectMode.Item
       opts.mapping["<CR>"] = cmp.mapping.confirm { select = true }
       opts.mapping["<Tab>"] = nil
