@@ -36,6 +36,7 @@ alias fzfd="cd \$(find * -type d | fzf)"
 alias exa="exa -all"
 alias lg="lazygit"
 alias vi="nvim"
+alias vin="NVIM_APPNAME=nvchad nvim"
 
 alias pd="pnpm dev"
 
