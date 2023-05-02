@@ -29,10 +29,10 @@ local M = {
 }
 
 local hop = require "hop"
-M.n["s"] = { function() hop.hint_char1 { current_line_only = false } end, desc = "Hop on the word" }
-M.n["S"] =
+M.n["<leader>s"] = { function() hop.hint_char1 { current_line_only = false } end, desc = "Hop on the word" }
+M.n["<leader>S"] =
   { function() hop.hint_char1 { current_line_only = false, hint_offset = -1 } end, desc = "Hop before the word" }
-M.v["s"] = M.n["s"]
-M.v["S"] = M.n["S"]
+M.v["s"] = M.n["<leader>s"]
+M.v["S"] = M.n["<leader>S"]
 
 return M
