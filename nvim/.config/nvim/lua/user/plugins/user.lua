@@ -8,6 +8,7 @@ return {
   { "sainnhe/gruvbox-material", event = "VeryLazy" },
   { "LunarVim/horizon.nvim", event = "VeryLazy" },
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
+  { "rebelot/kanagawa.nvim", event = "VeryLazy" },
   {
     "phaazon/hop.nvim",
     branch = "v2",
