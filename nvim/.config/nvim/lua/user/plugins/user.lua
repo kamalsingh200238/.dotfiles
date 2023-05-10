@@ -8,7 +8,8 @@ return {
   { "sainnhe/gruvbox-material", event = "VeryLazy" },
   { "LunarVim/horizon.nvim", event = "VeryLazy" },
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
-  { "rebelot/kanagawa.nvim", event = "VeryLazy" },
+  { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
+  { "haishanh/night-owl.vim", event = "VeryLazy" },
   {
     "phaazon/hop.nvim",
     branch = "v2",
