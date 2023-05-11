@@ -10,6 +10,7 @@ return {
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
   { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
   { "haishanh/night-owl.vim", event = "VeryLazy" },
+  -- { "notken12/base46-colors", event = "VeryLazy" },
   {
     "phaazon/hop.nvim",
     branch = "v2",
