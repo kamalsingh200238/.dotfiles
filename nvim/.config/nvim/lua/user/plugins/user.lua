@@ -10,6 +10,7 @@ return {
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
   { "tiagovla/tokyodark.nvim", event = "VeryLazy" },
   { "haishanh/night-owl.vim", event = "VeryLazy" },
+  { "bluz71/vim-nightfly-colors", event = "VeryLazy" },
   -- { "notken12/base46-colors", event = "VeryLazy" },
   {
     "phaazon/hop.nvim",
@@ -17,6 +18,7 @@ return {
     event = "VeryLazy",
     opts = {},
   },
+  { "tpope/vim-fugitive", event = "VeryLazy" },
 
   -- {
   --   "ray-x/lsp_signature.nvim",
