@@ -29,10 +29,12 @@ local M = {
 }
 
 local hop = require "hop"
-M.n["<leader>s"] = { function() hop.hint_char1 { current_line_only = false } end, desc = "Hop on the word" }
-M.n["<leader>S"] =
+M.n["se"] = { function() hop.hint_char1 { current_line_only = false } end, desc = "Hop on the word" }
+M.n["Se"] =
   { function() hop.hint_char1 { current_line_only = false, hint_offset = -1 } end, desc = "Hop before the word" }
-M.v["s"] = M.n["<leader>s"]
-M.v["S"] = M.n["<leader>S"]
+M.v["se"] = M.n["<leader>s"]
+M.v["Se"] = M.n["<leader>S"]
+
+M.n["<leader>sr"] = { function() require("spectre").open() end, desc = "Replace in files (Spectre)" }
 
 return M
