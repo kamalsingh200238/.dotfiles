@@ -88,6 +88,15 @@ return {
         ["<C-n>"] = actions.move_selection_next,
         ["<C-p>"] = actions.move_selection_previous,
       }
+      return opts
+    end,
+  },
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function(_, opts)
+      opts.char = "▎"
+      opts.context_char = "▎"
+      return opts
     end,
   },
   -- You can disable default plugins as follows:
