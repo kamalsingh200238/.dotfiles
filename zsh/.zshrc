@@ -37,6 +37,7 @@ alias exa="exa -all"
 alias lg="lazygit"
 alias vi="nvim"
 alias vin="NVIM_APPNAME=nvchad nvim"
+alias vil="NVIM_APPNAME=lazyvim nvim"
 
 alias pd="pnpm dev"
 
