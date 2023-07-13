@@ -17,8 +17,8 @@ HISTSIZE=10000
 SAVEHIST=10000  # Save most-recent 1000 lines
 # HISTFILE=~/.cache/zsh/.zsh_history
 
-#for Zoxide
-eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)" #for Zoxide
+eval "$(fnm env --use-on-cd)" #for fnm
 export ABBR_USER_ABBREVIATIONS_FILE=~/.config/zsh/abbreviations
 
 #for loading in utf-8 so my tmux doesn't go crazy
