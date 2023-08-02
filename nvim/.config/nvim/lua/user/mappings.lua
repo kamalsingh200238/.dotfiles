@@ -28,13 +28,37 @@ local M = {
   },
 }
 
-local hop = require "hop"
-M.n["se"] = { function() hop.hint_char1 { current_line_only = false } end, desc = "Hop on the word" }
-M.n["Se"] =
-  { function() hop.hint_char1 { current_line_only = false, hint_offset = -1 } end, desc = "Hop before the word" }
+M.n["se"] = {
+  function() require("hop").hint_char1 { current_line_only = false } end,
+  desc = "Hop on the word",
+}
+M.n["sE"] = {
+  function() require("hop").hint_char1 { current_line_only = false, hint_offset = -1 } end,
+  desc = "Hop before the word",
+}
+M.n["s/"] = {
+  function() require("hop").hint_patterns { current_line_only = false } end,
+  desc = "Find a pattern",
+}
 M.v["se"] = M.n["se"]
-M.v["Se"] = M.n["Se"]
+M.v["sE"] = M.n["sE"]
 
-M.n["<leader>sr"] = { function() require("spectre").open() end, desc = "Replace in files (Spectre)" }
+M.n["<leader>ff"] = {
+  function() require("telescope.builtin").find_files { hidden = true, no_ignore = false } end,
+  desc = "Find files",
+}
+M.n["<leader>fw"] = {
+  function()
+    require("telescope.builtin").live_grep {
+      additional_args = function(args) return vim.list_extend(args, { "--hidden" }) end,
+    }
+  end,
+  desc = "Find words in files",
+}
+
+M.n["<leader>sr"] = {
+  function() require("spectre").open() end,
+  desc = "Replace in files (Spectre)",
+}
 
 return M

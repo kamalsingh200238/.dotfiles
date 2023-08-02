@@ -88,6 +88,9 @@ return {
   {
     -- override nvim-cmp plugin
     "hrsh7th/nvim-cmp",
+    dependencies = {
+      { "roobert/tailwindcss-colorizer-cmp.nvim", config = true },
+    },
     -- override the options table that is used in the `require("cmp").setup()` call
     opts = function(_, opts)
       -- opts parameter is the default options table
@@ -95,23 +98,27 @@ return {
       local cmp = require "cmp"
       local luasnip = require "luasnip"
       local lspkind = require "lspkind"
-      -- modify the mapping part of the table
-      -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
+      local format_kinds = lspkind.cmp_format {
+        mode = "symbol_text", -- show only symbol annotations
+        maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+        ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+        -- The function below will be called before any actual modifications from lspkind
+        -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+        -- before = function (entry, vim_item)
+        --   ...
+        --   return vim_item
+        -- end
+      }
       opts.formatting = {
         fields = { "abbr", "kind" },
-        format = lspkind.cmp_format {
-          mode = "symbol_text", -- show only symbol annotations
-          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-          ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-          -- The function below will be called before any actual modifications from lspkind
-          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-          -- before = function (entry, vim_item)
-          --   ...
-          --   return vim_item
-          -- end
-        },
+        format = function(entry, item)
+          format_kinds(entry, item)
+          return require("tailwindcss-colorizer-cmp").formatter(entry, item)
+        end,
       }
       opts.preselect = cmp.PreselectMode.Item
+      -- modify the mapping part of the table
+      -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
       opts.mapping["<CR>"] = cmp.mapping.confirm { select = true }
       opts.mapping["<Tab>"] = nil
       opts.mapping["<S-Tab>"] = nil
@@ -150,10 +157,13 @@ return {
   },
 
   {
-    "lukas-reineke/indent-blankline.nvim",
+    "nvim-neo-tree/neo-tree.nvim",
     opts = function(_, opts)
-      opts.char = "▎"
-      opts.context_char = "▎"
+      opts.filesystem.filtered_items = {
+        hide_dotfiles = false,
+        -- hide_hidden = false, -- only works on Windows for hidden files/directories
+      }
+      -- opts.window.position = "right"
       return opts
     end,
   },
@@ -179,5 +189,22 @@ return {
     opts = {
       -- ensure_installed = { "python" },
     },
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function(_, opts)
+      opts.char = "▎"
+      opts.context_char = "▎"
+      return opts
+    end,
+  },
+
+  {
+    "NvChad/nvim-colorizer.lua",
+    opts = function(_, opts)
+      opts.user_default_options = { tailwind = true }
+      return opts
+    end,
   },
 }
