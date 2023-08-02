@@ -31,4 +31,7 @@ return {
   { "nvim-pack/nvim-spectre", event = "VeryLazy", opts = {} },
 
   { "echasnovski/mini.surround", event = "VeryLazy", opts = {} },
+
+  { "jose-elias-alvarez/typescript.nvim" },
+  -- { "sigmasd/deno-nvim" },
 }

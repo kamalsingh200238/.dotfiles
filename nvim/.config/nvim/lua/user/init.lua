@@ -53,6 +53,26 @@ return {
     servers = {
       -- "pyright"
     },
+    -- config = {
+    --   tsserver = function(opts)
+    --     opts.root_dir = require("lspconfig.util").root_pattern "package.json"
+    --     return opts
+    --   end,
+    --   denols = function(opts)
+    --     opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
+    --     return opts
+    --   end,
+    --   -- For eslint:
+    --   eslint = function(opts)
+    --     opts.root_dir = require("lspconfig.util").root_pattern("package.json", ".eslintrc.json", ".eslintrc.js")
+    --     return opts
+    --   end,
+    -- },
+    setup_handlers = {
+      -- add custom handler
+      tsserver = function(_, opts) require("typescript").setup { server = opts } end,
+      -- denols = function(_, opts) require("deno-nvim").setup { server = opts } end,
+    },
   },
 
   -- Configure require("lazy").setup() options
