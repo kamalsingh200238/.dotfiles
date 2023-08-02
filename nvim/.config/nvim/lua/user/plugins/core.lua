@@ -1,104 +1,4 @@
 return {
-  -- customize alpha options
-  {
-    "goolord/alpha-nvim",
-    opts = function(_, opts)
-      -- customize the dashboard header
-      opts.section.header.val = {
-        -- "           ▄ ▄                   ",
-        -- "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
-        -- "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
-        -- "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
-        -- "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
-        -- "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
-        -- "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
-        -- "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
-        -- "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
-        -- " █████  ███████ ████████ ██████   ██████",
-        -- "██   ██ ██         ██    ██   ██ ██    ██",
-        -- "███████ ███████    ██    ██████  ██    ██",
-        -- "██   ██      ██    ██    ██   ██ ██    ██",
-        -- "██   ██ ███████    ██    ██   ██  ██████",
-        -- " ",
-        -- "    ███    ██ ██    ██ ██ ███    ███",
-        -- "    ████   ██ ██    ██ ██ ████  ████",
-        -- "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
-        -- "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
-        -- "    ██   ████   ████   ██ ██      ██",
-      }
-      return opts
-    end,
-  },
-  {
-    -- override nvim-cmp plugin
-    "hrsh7th/nvim-cmp",
-    -- override the options table that is used in the `require("cmp").setup()` call
-    opts = function(_, opts)
-      -- opts parameter is the default options table
-      -- the function is lazy loaded so cmp is able to be required
-      local cmp = require "cmp"
-      local luasnip = require "luasnip"
-      local lspkind = require "lspkind"
-      -- modify the mapping part of the table
-      -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
-      opts.formatting = {
-        fields = { "abbr", "kind" },
-        format = lspkind.cmp_format {
-          mode = "symbol_text", -- show only symbol annotations
-          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
-          ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
-          -- The function below will be called before any actual modifications from lspkind
-          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-          -- before = function (entry, vim_item)
-          --   ...
-          --   return vim_item
-          -- end
-        },
-      }
-      opts.preselect = cmp.PreselectMode.Item
-      opts.mapping["<CR>"] = cmp.mapping.confirm { select = true }
-      opts.mapping["<Tab>"] = nil
-      opts.mapping["<S-Tab>"] = nil
-      opts.mapping["<C-k>"] = cmp.mapping(function(fallback)
-        if luasnip.jumpable(-1) then
-          luasnip.jump(-1)
-        else
-          fallback()
-        end
-      end, { "i", "s" })
-      opts.mapping["<C-j>"] = cmp.mapping(function(fallback)
-        if luasnip.expand_or_jumpable() then
-          luasnip.expand_or_jump()
-        else
-          fallback()
-        end
-      end, { "i", "s" })
-
-      -- return the new table to be used
-      return opts
-    end,
-  },
-  {
-    "nvim-telescope/telescope.nvim",
-    opts = function(_, opts)
-      local actions = require "telescope.actions"
-      opts.defaults.mappings.i = {
-        ["<C-j>"] = actions.cycle_history_next,
-        ["<C-k>"] = actions.cycle_history_prev,
-        ["<C-n>"] = actions.move_selection_next,
-        ["<C-p>"] = actions.move_selection_previous,
-      }
-      return opts
-    end,
-  },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    opts = function(_, opts)
-      opts.char = "▎"
-      opts.context_char = "▎"
-      return opts
-    end,
-  },
   -- You can disable default plugins as follows:
   -- { "max397574/better-escape.nvim", enabled = false },
   --
@@ -153,4 +53,131 @@ return {
   --     }, { mode = "n", prefix = "<leader>" })
   --   end,
   -- },
+
+  -- customize alpha options
+  {
+    "goolord/alpha-nvim",
+    opts = function(_, opts)
+      -- customize the dashboard header
+      opts.section.header.val = {
+        -- "           ▄ ▄                   ",
+        -- "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+        -- "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+        -- "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+        -- "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+        -- "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+        -- "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+        -- "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+        -- "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+        -- " █████  ███████ ████████ ██████   ██████",
+        -- "██   ██ ██         ██    ██   ██ ██    ██",
+        -- "███████ ███████    ██    ██████  ██    ██",
+        -- "██   ██      ██    ██    ██   ██ ██    ██",
+        -- "██   ██ ███████    ██    ██   ██  ██████",
+        -- " ",
+        -- "    ███    ██ ██    ██ ██ ███    ███",
+        -- "    ████   ██ ██    ██ ██ ████  ████",
+        -- "    ██ ██  ██ ██    ██ ██ ██ ████ ██",
+        -- "    ██  ██ ██  ██  ██  ██ ██  ██  ██",
+        -- "    ██   ████   ████   ██ ██      ██",
+      }
+      return opts
+    end,
+  },
+
+  {
+    -- override nvim-cmp plugin
+    "hrsh7th/nvim-cmp",
+    -- override the options table that is used in the `require("cmp").setup()` call
+    opts = function(_, opts)
+      -- opts parameter is the default options table
+      -- the function is lazy loaded so cmp is able to be required
+      local cmp = require "cmp"
+      local luasnip = require "luasnip"
+      local lspkind = require "lspkind"
+      -- modify the mapping part of the table
+      -- opts.mapping["<Cr>"] = cmp.mapping.select_next_item()
+      opts.formatting = {
+        fields = { "abbr", "kind" },
+        format = lspkind.cmp_format {
+          mode = "symbol_text", -- show only symbol annotations
+          maxwidth = 80, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+          ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+          -- The function below will be called before any actual modifications from lspkind
+          -- so that you can provide more controls on popup customization. (See [#30](https://github.com/onsails/lspkind-nvim/pull/30))
+          -- before = function (entry, vim_item)
+          --   ...
+          --   return vim_item
+          -- end
+        },
+      }
+      opts.preselect = cmp.PreselectMode.Item
+      opts.mapping["<CR>"] = cmp.mapping.confirm { select = true }
+      opts.mapping["<Tab>"] = nil
+      opts.mapping["<S-Tab>"] = nil
+      opts.mapping["<C-k>"] = cmp.mapping(function(fallback)
+        if luasnip.jumpable(-1) then
+          luasnip.jump(-1)
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+      opts.mapping["<C-j>"] = cmp.mapping(function(fallback)
+        if luasnip.expand_or_jumpable() then
+          luasnip.expand_or_jump()
+        else
+          fallback()
+        end
+      end, { "i", "s" })
+
+      -- return the new table to be used
+      return opts
+    end,
+  },
+
+  {
+    "nvim-telescope/telescope.nvim",
+    opts = function(_, opts)
+      local actions = require "telescope.actions"
+      opts.defaults.mappings.i = {
+        ["<C-j>"] = actions.cycle_history_next,
+        ["<C-k>"] = actions.cycle_history_prev,
+        ["<C-n>"] = actions.move_selection_next,
+        ["<C-p>"] = actions.move_selection_previous,
+      }
+      return opts
+    end,
+  },
+
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    opts = function(_, opts)
+      opts.char = "▎"
+      opts.context_char = "▎"
+      return opts
+    end,
+  },
+
+  {
+    "williamboman/mason-lspconfig.nvim",
+    -- overrides `require("mason-lspconfig").setup(...)`
+    opts = {
+      ensure_installed = { "lua_ls", "tsserver", "tailwindcss" },
+    },
+  },
+  -- use mason-null-ls to configure Formatters/Linter installation for null-ls sources
+  {
+    "jay-babu/mason-null-ls.nvim",
+    -- overrides `require("mason-null-ls").setup(...)`
+    opts = {
+      ensure_installed = { "prettier", "stylua" },
+    },
+  },
+  {
+    "jay-babu/mason-nvim-dap.nvim",
+    -- overrides `require("mason-nvim-dap").setup(...)`
+    opts = {
+      -- ensure_installed = { "python" },
+    },
+  },
 }
