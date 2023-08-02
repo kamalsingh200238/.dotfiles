@@ -47,14 +47,6 @@ M.n["<leader>ff"] = {
   function() require("telescope.builtin").find_files { hidden = true, no_ignore = false } end,
   desc = "Find files",
 }
-M.n["<leader>fw"] = {
-  function()
-    require("telescope.builtin").live_grep {
-      additional_args = function(args) return vim.list_extend(args, { "--hidden" }) end,
-    }
-  end,
-  desc = "Find words in files",
-}
 
 M.n["<leader>sr"] = {
   function() require("spectre").open() end,
