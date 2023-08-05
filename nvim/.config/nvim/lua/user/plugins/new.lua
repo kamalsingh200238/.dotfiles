@@ -15,7 +15,7 @@ return {
   { "EdenEast/nightfox.nvim", event = "VeryLazy" },
   { "sainnhe/gruvbox-material", event = "VeryLazy" },
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
-  { "folke/tokyonight.nvim", event = "VeryLazy" },
+  { "folke/tokyonight.nvim", lazy = true, opts = { style = "moon" } },
 
   {
     "phaazon/hop.nvim",
@@ -34,4 +34,11 @@ return {
 
   { "jose-elias-alvarez/typescript.nvim" },
   -- { "sigmasd/deno-nvim" },
+
+  {
+    "j-hui/fidget.nvim",
+    tag = "legacy",
+    event = "LspAttach",
+    opts = {},
+  },
 }
