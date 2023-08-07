@@ -207,4 +207,9 @@ return {
       return opts
     end,
   },
+
+  {
+    "AstroNvim/astrotheme",
+    event = "VeryLazy",
+  },
 }

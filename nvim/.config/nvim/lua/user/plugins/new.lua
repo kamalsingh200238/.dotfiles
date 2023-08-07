@@ -15,7 +15,7 @@ return {
   { "EdenEast/nightfox.nvim", event = "VeryLazy" },
   { "sainnhe/gruvbox-material", event = "VeryLazy" },
   { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
-  { "folke/tokyonight.nvim", lazy = true, opts = { style = "moon" } },
+  { "folke/tokyonight.nvim", event = "VeryLazy" },
 
   {
     "phaazon/hop.nvim",
