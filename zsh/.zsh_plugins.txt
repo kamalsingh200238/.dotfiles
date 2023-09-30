@@ -1,7 +1,5 @@
 #antidote bundle < ~/dotfiles/zsh/.zsh_plugins.txt > ~/.zsh_plugins.zsh
 
-romkatv/powerlevel10k
-
 zsh-users/zsh-autosuggestions
 zsh-users/zsh-syntax-highlighting
 zsh-users/zsh-history-substring-search
