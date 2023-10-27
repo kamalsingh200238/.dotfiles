@@ -1,13 +1,15 @@
 # source antidote
-source /usr/share/zsh-antidote/antidote.zsh
+# source /usr/share/zsh-antidote/antidote.zsh
 
 # initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
+source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+
 antidote load
 source ~/.zsh_plugins.zsh
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)" #for Zoxide
-eval "$(fnm env --use-on-cd)" #for fnm
+# eval "$(fnm env --use-on-cd)" #for fnm
 
 HISTSIZE=10000
 SAVEHIST=10000
@@ -23,12 +25,11 @@ export PATH="$HOME/.local/bin:$PATH"
 alias gb="cd .."
 alias gh="cd ~/"
 alias fzfd="cd \$(find * -type d | fzf)"
-alias exa="exa -all"
+alias eza="eza -all"
 alias lg="lazygit"
 alias vi="nvim"
 alias vin="NVIM_APPNAME=nvchad nvim"
 alias vil="NVIM_APPNAME=lazyvim nvim"
-alias pd="pnpm dev"
 
 #for good movement
 bindkey "^[[1;5C" forward-word
