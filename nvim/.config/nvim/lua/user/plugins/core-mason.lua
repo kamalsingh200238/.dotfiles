@@ -27,8 +27,6 @@ return {
         "stylua",
 
         -- python
-        "flake8",
-        "djlint", -- for django specifically
         "black"
       },
     },
