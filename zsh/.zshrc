@@ -1,14 +1,20 @@
-# source antidote
-# source /usr/share/zsh-antidote/antidote.zsh
+zsh_plugins=${ZDOTDIR:-~}/.zsh_plugins.zsh
 
-# initialize plugins statically with ${ZDOTDIR:-~}/.zsh_plugins.txt
-source ${ZDOTDIR:-~}/.antidote/antidote.zsh
+# Lazy-load antidote.
+fpath+=(${ZDOTDIR:-~}/.antidote)
+autoload -Uz $fpath[-1]/antidote
 
-antidote load
-source ~/.zsh_plugins.zsh
+# Generate static file in a subshell when .zsh_plugins.txt is updated.
+if [[ ! $zsh_plugins -nt ${zsh_plugins:r}.txt ]]; then
+  (antidote bundle <${zsh_plugins:r}.txt >|$zsh_plugins)
+fi
+
+# Source your static plugins file.
+source $zsh_plugins
 
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)" #for Zoxide
+eval "$(pyenv init --path)"
 # eval "$(fnm env --use-on-cd)" #for fnm
 
 HISTSIZE=10000
@@ -37,3 +43,11 @@ bindkey "^[[1;5D" backward-word
 bindkey "^k" history-substring-search-up
 bindkey "^j" history-substring-search-down
 bindkey "^ " autosuggest-accept
+
+# pnpm
+export PNPM_HOME="/Users/kamal.singh/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
