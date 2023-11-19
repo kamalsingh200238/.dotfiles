@@ -44,7 +44,13 @@ M.v["se"] = M.n["se"]
 M.v["sE"] = M.n["sE"]
 
 M.n["<leader>ff"] = {
-  function() require("telescope.builtin").find_files { hidden = true, no_ignore = false } end,
+  function()
+    if vim.loop.fs_stat(vim.loop.cwd() .. "/.git") then
+      require("telescope.builtin").git_files { hidden = true }
+    else
+      require("telescope.builtin").find_files { hidden = true }
+    end
+  end,
   desc = "Find files",
 }
 
