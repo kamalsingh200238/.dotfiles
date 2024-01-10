@@ -10,14 +10,15 @@ return {
 	-- font
 	-- font = wezterm.font("JetBrains Mono Nerd Font", { weight = "Medium" }),
 	font = wezterm.font_with_fallback({
-		{ family = "JetBrains Mono", weight = "Medium" },
-		{ family = "Symbols Nerd Font", scale = 0.75},
+		{ family = "JetBrains Mono", weight = "Bold" },
+		{ family = "Symbols Nerd Font", scale = 0.75 },
 		{ family = "JoyPixels" },
 	}),
 	font_size = 14.6,
 	line_height = 1.0,
+
 	-- Window
-	window_decorations = "RESIZE",
+	-- window_decorations = "RESIZE",
 	window_close_confirmation = "NeverPrompt",
 	window_background_opacity = 1,
 	window_padding = { -- For padding
@@ -26,6 +27,10 @@ return {
 		top = 0,
 		bottom = 0,
 	},
+
+	force_reverse_video_cursor = true,
+	-- cursor_fg = "rgba(0,0,0,0)",
+
 	-- Tabs
 	hide_tab_bar_if_only_one_tab = true,
 	tab_bar_at_bottom = false,
