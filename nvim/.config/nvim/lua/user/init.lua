@@ -53,21 +53,25 @@ return {
     servers = {
       -- "pyright"
     },
-    -- config = {
-    --   tsserver = function(opts)
-    --     opts.root_dir = require("lspconfig.util").root_pattern "package.json"
-    --     return opts
-    --   end,
-    --   denols = function(opts)
-    --     opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-    --     return opts
-    --   end,
-    --   -- For eslint:
-    --   eslint = function(opts)
-    --     opts.root_dir = require("lspconfig.util").root_pattern("package.json", ".eslintrc.json", ".eslintrc.js")
-    --     return opts
-    --   end,
-    -- },
+    config = {
+      html = function(opts)
+        opts.filetypes = { "html", "template", "gohtml" }
+        return opts
+      end,
+      -- tsserver = function(opts)
+      --   opts.root_dir = require("lspconfig.util").root_pattern "package.json"
+      --   return opts
+      -- end,
+      -- denols = function(opts)
+      --   opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
+      --   return opts
+      -- end,
+      -- -- For eslint:
+      -- eslint = function(opts)
+      --   opts.root_dir = require("lspconfig.util").root_pattern("package.json", ".eslintrc.json", ".eslintrc.js")
+      --   return opts
+      -- end,
+    },
     setup_handlers = {
       -- add custom handler
       tsserver = function(_, opts) require("typescript").setup { server = opts } end,
@@ -91,16 +95,23 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
-    -- vim.filetype.add {
-    --   extension = {
-    --     foo = "fooscript",
-    --   },
-    --   filename = {
-    --     ["Foofile"] = "fooscript",
-    --   },
-    --   pattern = {
-    --     ["~/%.config/foo/.*"] = "fooscript",
-    --   },
-    -- }
+    vim.filetype.add {
+      extension = {
+        -- foo = "fooscript",
+        template = "template",
+      },
+      -- filename = {
+      --   ["Foofile"] = "fooscript",
+      -- },
+      -- pattern = {
+      --   ["~/%.config/foo/.*"] = "fooscript",
+      -- },
+    }
+    vim.api.nvim_exec(
+      [[
+      au BufRead,BufNewFile *.template set filetype=html
+    ]],
+      false
+    )
   end,
 }
