@@ -55,7 +55,62 @@ return {
     },
     config = {
       html = function(opts)
-        opts.filetypes = { "html", "template", "gohtml" }
+        opts.filetypes = { "html", "template", "gohtml", "templ" }
+        return opts
+      end,
+      tailwindcss = function(opts)
+        opts.filetypes = {
+          "aspnetcorerazor",
+          "astro",
+          "astro-markdown",
+          "blade",
+          "clojure",
+          "django-html",
+          "htmldjango",
+          "edge",
+          "eelixir",
+          "elixir",
+          "ejs",
+          "erb",
+          "eruby",
+          "gohtml",
+          "gohtmltmpl",
+          "haml",
+          "handlebars",
+          "hbs",
+          "html",
+          "html-eex",
+          "heex",
+          "jade",
+          "leaf",
+          "liquid",
+          "markdown",
+          "mdx",
+          "mustache",
+          "njk",
+          "nunjucks",
+          "php",
+          "razor",
+          "slim",
+          "twig",
+          "css",
+          "less",
+          "postcss",
+          "sass",
+          "scss",
+          "stylus",
+          "sugarss",
+          "javascript",
+          "javascriptreact",
+          "reason",
+          "rescript",
+          "typescript",
+          "typescriptreact",
+          "vue",
+          "svelte",
+          "templ",
+        }
+        opts.init_options = { userLanguages = { templ = "html" } }
         return opts
       end,
       -- tsserver = function(opts)
@@ -99,6 +154,7 @@ return {
       extension = {
         -- foo = "fooscript",
         template = "template",
+        templ = "templ",
       },
       -- filename = {
       --   ["Foofile"] = "fooscript",
