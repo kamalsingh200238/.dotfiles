@@ -28,29 +28,8 @@ local M = {
   },
 }
 
-M.n["se"] = {
-  function() require("hop").hint_char1 { current_line_only = false } end,
-  desc = "Hop on the word",
-}
-M.n["sE"] = {
-  function() require("hop").hint_char1 { current_line_only = false, hint_offset = -1 } end,
-  desc = "Hop before the word",
-}
-M.n["s/"] = {
-  function() require("hop").hint_patterns { current_line_only = false } end,
-  desc = "Find a pattern",
-}
-M.v["se"] = M.n["se"]
-M.v["sE"] = M.n["sE"]
-
 M.n["<leader>ff"] = {
-  function()
-    if vim.loop.fs_stat(vim.loop.cwd() .. "/.git") then
-      require("telescope.builtin").git_files { hidden = true }
-    else
-      require("telescope.builtin").find_files { hidden = true }
-    end
-  end,
+  function() require("telescope.builtin").find_files { hidden = true } end,
   desc = "Find files",
 }
 
