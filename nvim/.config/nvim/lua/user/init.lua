@@ -18,7 +18,7 @@ return {
   },
 
   -- Set colorscheme to use
-  colorscheme = "catppuccin-mocha",
+  colorscheme = "catppuccin-macchiato",
 
   -- Diagnostics configuration (for vim.diagnostics.config({...})) when diagnostics are on
   diagnostics = {
@@ -39,7 +39,6 @@ return {
           -- "python",
         },
       },
-      filter = function(client) return client.name == "null-ls" end,
       disabled = { -- disable formatting capabilities for the listed language servers
         -- disable lua_ls formatting capability if you want to use StyLua to format your lua code
         -- "lua_ls",
@@ -52,85 +51,6 @@ return {
     -- enable servers that you already have installed without mason
     servers = {
       -- "pyright"
-    },
-    config = {
-      html = function(opts)
-        opts.filetypes = { "html", "template", "gohtml", "templ" }
-        return opts
-      end,
-      tailwindcss = function(opts)
-        opts.filetypes = {
-          "aspnetcorerazor",
-          "astro",
-          "astro-markdown",
-          "blade",
-          "clojure",
-          "django-html",
-          "htmldjango",
-          "edge",
-          "eelixir",
-          "elixir",
-          "ejs",
-          "erb",
-          "eruby",
-          "gohtml",
-          "gohtmltmpl",
-          "haml",
-          "handlebars",
-          "hbs",
-          "html",
-          "html-eex",
-          "heex",
-          "jade",
-          "leaf",
-          "liquid",
-          "markdown",
-          "mdx",
-          "mustache",
-          "njk",
-          "nunjucks",
-          "php",
-          "razor",
-          "slim",
-          "twig",
-          "css",
-          "less",
-          "postcss",
-          "sass",
-          "scss",
-          "stylus",
-          "sugarss",
-          "javascript",
-          "javascriptreact",
-          "reason",
-          "rescript",
-          "typescript",
-          "typescriptreact",
-          "vue",
-          "svelte",
-          "templ",
-        }
-        opts.init_options = { userLanguages = { templ = "html" } }
-        return opts
-      end,
-      -- tsserver = function(opts)
-      --   opts.root_dir = require("lspconfig.util").root_pattern "package.json"
-      --   return opts
-      -- end,
-      -- denols = function(opts)
-      --   opts.root_dir = require("lspconfig.util").root_pattern("deno.json", "deno.jsonc")
-      --   return opts
-      -- end,
-      -- -- For eslint:
-      -- eslint = function(opts)
-      --   opts.root_dir = require("lspconfig.util").root_pattern("package.json", ".eslintrc.json", ".eslintrc.js")
-      --   return opts
-      -- end,
-    },
-    setup_handlers = {
-      -- add custom handler
-      tsserver = function(_, opts) require("typescript").setup { server = opts } end,
-      -- denols = function(_, opts) require("deno-nvim").setup { server = opts } end,
     },
   },
 
@@ -150,24 +70,16 @@ return {
   -- anything that doesn't fit in the normal config locations above can go here
   polish = function()
     -- Set up custom filetypes
-    vim.filetype.add {
-      extension = {
-        -- foo = "fooscript",
-        template = "template",
-        templ = "templ",
-      },
-      -- filename = {
-      --   ["Foofile"] = "fooscript",
-      -- },
-      -- pattern = {
-      --   ["~/%.config/foo/.*"] = "fooscript",
-      -- },
-    }
-    vim.api.nvim_exec(
-      [[
-      au BufRead,BufNewFile *.template set filetype=html
-    ]],
-      false
-    )
+    -- vim.filetype.add {
+    --   extension = {
+    --     foo = "fooscript",
+    --   },
+    --   filename = {
+    --     ["Foofile"] = "fooscript",
+    --   },
+    --   pattern = {
+    --     ["~/%.config/foo/.*"] = "fooscript",
+    --   },
+    -- }
   end,
 }

@@ -7,7 +7,6 @@ return {
     spell = false, -- sets vim.opt.spell
     signcolumn = "yes", -- sets vim.opt.signcolumn to auto
     wrap = false, -- sets vim.opt.wrap
-    cmdheight = 1,
   },
   g = {
     mapleader = " ", -- sets vim.g.mapleader
@@ -17,7 +16,7 @@ return {
     diagnostics_mode = 3, -- set the visibility of diagnostics in the UI (0=off, 1=only show in status line, 2=virtual text off, 3=all on)
     icons_enabled = true, -- disable icons in the UI (disable if no nerd font is available, requires :PackerSync after changing)
     ui_notifications_enabled = true, -- disable notifications when toggling UI elements
-    gruvbox_material_foreground = "original",
+    resession_enabled = false, -- enable experimental resession.nvim session management (will be default in AstroNvim v4)
   },
 }
 -- If you need more control, you can use the function()...end notation
