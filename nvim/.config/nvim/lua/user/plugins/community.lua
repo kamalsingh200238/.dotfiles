@@ -6,6 +6,20 @@ return {
 
   { import = "astrocommunity.colorscheme.catppuccin" },
   { "catppuccin", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.everforest" },
+  { "sainnhe/everforest", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.gruvbox-baby" },
+  { "luisiacc/gruvbox-baby", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.melange-nvim" },
+  { "savq/melange-nvim", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.nightfox-nvim" },
+  { "EdenEast/nightfox.nvim", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.onedarkpro-nvim" },
+  { "olimorris/onedarkpro.nvim", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.rose-pine" },
+  { "rose-pine", event = "VeryLazy" },
+  { import = "astrocommunity.colorscheme.tokyonight-nvim" },
+  { "folke/tokyonight.nvim", event = "VeryLazy" },
 
   { import = "astrocommunity.pack.lua" },
   { import = "astrocommunity.pack.go" },
@@ -47,7 +61,7 @@ return {
 
   { import = "astrocommunity.diagnostics.trouble-nvim" },
 
-  { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
+  -- { import = "astrocommunity.editing-support.rainbow-delimiters-nvim" },
   { import = "astrocommunity.editing-support.refactoring-nvim" },
   { import = "astrocommunity.editing-support.todo-comments-nvim" },
   { import = "astrocommunity.editing-support.yanky-nvim" },
