@@ -44,9 +44,9 @@ return {
         -- "lua_ls",
       },
       timeout_ms = 5000, -- default format timeout
-      -- filter = function(client) -- fully override the default formatting function
-      --   return true
-      -- end
+      filter = function(client) -- fully override the default formatting function
+        return client.name == "null-ls"
+      end,
     },
     -- enable servers that you already have installed without mason
     servers = {

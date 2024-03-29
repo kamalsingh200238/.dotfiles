@@ -25,6 +25,7 @@ return {
   { import = "astrocommunity.pack.go" },
   { import = "astrocommunity.pack.python" },
   { import = "astrocommunity.pack.typescript" },
+  { import = "astrocommunity.pack.docker" },
   { import = "astrocommunity.pack.tailwindcss" },
   {
     "hrsh7th/nvim-cmp",
@@ -53,6 +54,7 @@ return {
       return opts
     end,
   },
+  { import = "astrocommunity.pack.templ" },
 
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
