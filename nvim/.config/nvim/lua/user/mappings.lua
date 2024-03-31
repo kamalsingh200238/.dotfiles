@@ -6,6 +6,25 @@
 return {
   -- first key is the mode
   n = {
+    ["<leader>lf"] = {
+      function()
+        vim.lsp.buf.format {
+          filter = function(client) -- fully override the default formatting function
+            return client.name ~= "null-ls"
+          end,
+        }
+      end,
+      desc = "New tab",
+    },
+
+    ["<leader>nf"] = {
+      function()
+        vim.lsp.buf.format {
+          client = "null-ls",
+        }
+      end,
+      desc = "New tab",
+    },
     -- second key is the lefthand side of the map
 
     -- navigate buffer tabs with `H` and `L`
