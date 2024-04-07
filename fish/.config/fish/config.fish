@@ -12,8 +12,6 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim 
 set -gx PATH $HOME/go/bin $HOME/.local/bin $PATH
 
-alias vil "env NVIM_APPNAME=lazyvim nvim"
-
 starship init fish | source
 zoxide init fish | source
 
