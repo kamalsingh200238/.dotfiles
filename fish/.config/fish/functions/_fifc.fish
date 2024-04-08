@@ -1,4 +1,5 @@
 function _fifc
+    set -f --export SHELL (command --search fish)
     set -l result
     set -Ux _fifc_extract_regex
     set -gx _fifc_complist_path (string join '' (mktemp) "_fifc")
@@ -47,10 +48,11 @@ function _fifc
     # We use eval hack because wrapping source command
     # inside a function cause some delay before fzf to show up
     eval $cmd | while read -l token
-        # string escape will escape '~' if present (at the begenning of path).
-        # so we need to exclude it from escaping
+        # don't escape '~' for path, `$` for environ
         if string match --quiet '~*' -- $token
             set -a result (string join -- "" "~" (string sub --start 2 -- $token | string escape))
+        else if string match --quiet '$*' -- $token
+            set -a result (string join -- "" "\$" (string sub --start 2 -- $token | string escape))
         else
             set -a result (string escape --no-quoted -- $token)
         end
