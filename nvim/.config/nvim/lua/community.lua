@@ -39,7 +39,7 @@ return {
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.toml" },
   -- { import = "astrocommunity.pack.templ" },
-  -- { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.java" },
 
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
