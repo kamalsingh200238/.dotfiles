@@ -46,22 +46,22 @@ return {
       n = {
         -- second key is the lefthand side of the map
 
-        ["<leader>lF"] = {
+        ["<Leader>lF"] = {
           function()
             vim.lsp.buf.format {
               filter = function(client) return client.name ~= "null-ls" end,
             }
           end,
-          desc = "New tab",
+          desc = "Format without null ls",
         },
 
-        ["<leader>lf"] = {
+        ["<Leader>lf"] = {
           function()
             vim.lsp.buf.format {
               filter = function(client) return client.name == "null-ls" end,
             }
           end,
-          desc = "New tab",
+          desc = "Format with null ls",
         },
 
         -- navigate buffer tabs with `H` and `L`
