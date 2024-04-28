@@ -38,6 +38,9 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.sql" },
+  { import = "astrocommunity.pack.php" },
   -- { import = "astrocommunity.pack.templ" },
   { import = "astrocommunity.pack.java" },
 
