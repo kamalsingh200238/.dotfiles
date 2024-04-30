@@ -38,8 +38,10 @@ return {
   { import = "astrocommunity.pack.markdown" },
   { import = "astrocommunity.pack.json" },
   { import = "astrocommunity.pack.toml" },
+  { import = "astrocommunity.pack.sql" },
   -- { import = "astrocommunity.pack.templ" },
-  { import = "astrocommunity.pack.java" },
+  -- { import = "astrocommunity.pack.java" },
+  { import = "astrocommunity.pack.yaml" },
 
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
