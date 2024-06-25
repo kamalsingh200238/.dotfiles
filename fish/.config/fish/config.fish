@@ -18,7 +18,6 @@ set -gx PATH $HOME/go/bin $HOME/.local/bin $JAVA_HOME/bin $NETBEANS_DIR/bin $PAT
 starship init fish | source
 zoxide init fish | source
 pyenv init - | source
-pyenv  virtualenv-init - | source
 
 # pnpm
 set -gx PNPM_HOME $HOME/Library/pnpm 
