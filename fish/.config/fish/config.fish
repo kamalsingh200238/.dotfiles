@@ -12,7 +12,7 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim 
 set -Ux JAVA_HOME $HOME/.local/bin/jdk-20.0.2
 set -Ux NETBEANS_DIR $HOME/.local/bin/netbeans/
-set -gx PATH $HOME/go/bin $HOME/.local/bin $JAVA_HOME/bin $NETBEANS_DIR/bin $PATH
+set -gx PATH $HOME/go/bin $HOME/.local/bin $JAVA_HOME/bin $NETBEANS_DIR/bin $HOME/.composer/vendor/bin $PATH
 
 
 starship init fish | source
