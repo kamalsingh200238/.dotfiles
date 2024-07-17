@@ -41,7 +41,7 @@ return {
   { import = "astrocommunity.pack.full-dadbod" },
   { import = "astrocommunity.pack.yaml" },
   -- { import = "astrocommunity.pack.java" },
-  -- { import = "astrocommunity.pack.php" },
+  { import = "astrocommunity.pack.php" },
 
   { import = "astrocommunity.motion.flash-nvim" },
   { import = "astrocommunity.motion.mini-surround" },
