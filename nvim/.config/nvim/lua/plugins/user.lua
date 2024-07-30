@@ -73,7 +73,7 @@ return {
       })
 
       -- Install parsers synchronously (only applied to `ensure_installed`)
-      opts.sync_install = true
+      opts.sync_install = false
 
       -- Automatically install missing parsers when entering buffer
       -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
