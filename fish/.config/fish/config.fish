@@ -9,10 +9,10 @@ set fish_cursor_replace underscore
 set fish_vi_force_cursor 1
 set -U fifc_keybinding \cx
 
+set -gx COMPOSER_HOME $HOME/.composer
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx PATH $HOME/go/bin $HOME/.local/bin $HOME/.composer/vendor/bin $PATH
-
+set -gx PATH $HOME/go/bin $HOME/.local/bin $COMPOSER_HOME/vendor/bin $PATH
 
 starship init fish | source
 zoxide init fish | source
