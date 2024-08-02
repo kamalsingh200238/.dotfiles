@@ -14,7 +14,7 @@ return {
 		{ family = "Symbols Nerd Font", scale = 0.90 },
 		{ family = "JoyPixels" },
 	}),
-	font_size = 14.6,
+	font_size = 12.0,
 	line_height = 1.0,
 
 	-- Window
