@@ -55,15 +55,6 @@ return {
           desc = "Format without null ls",
         },
 
-        ["<Leader>lf"] = {
-          function()
-            vim.lsp.buf.format {
-              filter = function(client) return client.name == "null-ls" end,
-            }
-          end,
-          desc = "Format with null ls",
-        },
-
         -- navigate buffer tabs with `H` and `L`
         L = { function() require("astrocore.buffer").nav(vim.v.count1) end, desc = "Next buffer" },
         H = { function() require("astrocore.buffer").nav(-vim.v.count1) end, desc = "Previous buffer" },
