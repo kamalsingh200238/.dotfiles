@@ -53,12 +53,19 @@ on-focus-changed = "move-mouse window-lazy-center"
 #                 Monitor pattern is the same as for 'workspace-to-monitor-force-assignment'.
 #                 See: https://nikitabobko.github.io/AeroSpace/guide#assign-workspaces-to-monitors
 [workspace-to-monitor-force-assignment]
+1 = 1
+2 = 1
+3 = 1
 4 = 1
 5 = 1
 6 = 1
 7 = 1
-8 = 3
-9 = 3
+8 = 1
+9 = 1
+A = 2
+B = 3
+C = 2
+D = 3
 
 [gaps]
 inner.horizontal = 10
@@ -125,28 +132,28 @@ ctrl-6 = 'workspace 6'
 ctrl-7 = 'workspace 7'
 ctrl-8 = 'workspace 8'
 ctrl-9 = 'workspace 9'
-alt-a = 'workspace A'
-alt-b = 'workspace B'
-alt-c = 'workspace C'
-alt-d = 'workspace D'
-alt-e = 'workspace E'
-alt-f = 'workspace F'
-alt-g = 'workspace G'
-alt-i = 'workspace I'
-alt-m = 'workspace M'
-alt-n = 'workspace N'
-alt-o = 'workspace O'
-alt-p = 'workspace P'
-alt-q = 'workspace Q'
-alt-r = 'workspace R'
-alt-s = 'workspace S'
-alt-t = 'workspace T'
-alt-u = 'workspace U'
-alt-v = 'workspace V'
-alt-w = 'workspace W'
-alt-x = 'workspace X'
-alt-y = 'workspace Y'
-alt-z = 'workspace Z'
+ctrl-a = 'workspace A'
+ctrl-b = 'workspace B'
+ctrl-c = 'workspace C'
+ctrl-d = 'workspace D'
+ctrl-e = 'workspace E'
+ctrl-f = 'workspace F'
+ctrl-g = 'workspace G'
+ctrl-i = 'workspace I'
+ctrl-m = 'workspace M'
+ctrl-n = 'workspace N'
+ctrl-o = 'workspace O'
+ctrl-p = 'workspace P'
+ctrl-q = 'workspace Q'
+ctrl-r = 'workspace R'
+ctrl-s = 'workspace S'
+ctrl-t = 'workspace T'
+ctrl-u = 'workspace U'
+ctrl-v = 'workspace V'
+ctrl-w = 'workspace W'
+ctrl-x = 'workspace X'
+ctrl-y = 'workspace Y'
+ctrl-z = 'workspace Z'
 
 # See: https://nikitabobko.github.io/AeroSpace/commands#move-node-to-workspace
 cmd-ctrl-alt-shift-1 = 'move-node-to-workspace 1'
