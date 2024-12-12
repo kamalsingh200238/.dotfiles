@@ -14,13 +14,14 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx PATH $HOME/go/bin $HOME/.local/bin $COMPOSER_HOME/vendor/bin $PATH
 
+alias kickstart='NVIM_APPNAME="kickstart" nvim'
+
 starship init fish | source
 zoxide init fish | source
-pyenv init - | source
 
 # pnpm
-set -gx PNPM_HOME $HOME/Library/pnpm 
+set -gx PNPM_HOME $HOME/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
+    set -gx PATH "$PNPM_HOME" $PATH
 end
 # pnpm end
