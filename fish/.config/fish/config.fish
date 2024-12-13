@@ -17,6 +17,9 @@ set -gx PATH $HOME/go/bin $HOME/.local/bin $COMPOSER_HOME/vendor/bin $PATH
 starship init fish | source
 zoxide init fish | source
 
+alias lvim="NVIM_APPNAME='lazyvim' nvim"
+alias avim="NVIM_APPNAME='astrovim' nvim"
+
 # pnpm
 set -gx PNPM_HOME $HOME/Library/pnpm
 if not string match -q -- $PNPM_HOME $PATH
