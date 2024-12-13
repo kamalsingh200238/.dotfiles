@@ -14,8 +14,6 @@ set -gx EDITOR nvim
 set -gx VISUAL nvim
 set -gx PATH $HOME/go/bin $HOME/.local/bin $COMPOSER_HOME/vendor/bin $PATH
 
-alias kickstart='NVIM_APPNAME="kickstart" nvim'
-
 starship init fish | source
 zoxide init fish | source
 
