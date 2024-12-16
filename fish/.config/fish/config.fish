@@ -16,6 +16,7 @@ set -gx PATH $HOME/go/bin $HOME/.local/bin $COMPOSER_HOME/vendor/bin $PATH
 
 starship init fish | source
 zoxide init fish | source
+pyenv init - | source
 
 alias lvim="NVIM_APPNAME='lazyvim' nvim"
 alias avim="NVIM_APPNAME='astrovim' nvim"
