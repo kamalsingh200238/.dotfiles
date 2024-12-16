@@ -39,14 +39,12 @@ return {
       keys[#keys + 1] = { "<leader>lA", LazyVim.lsp.action.source, desc = "Source Action", has = "codeAction" }
     end,
   },
-
   {
     "nvim-neo-tree/neo-tree.nvim",
     keys = {
       { "<leader>o", "<cmd>Neotree focus<cr>", desc = "NeoTree focus" },
     },
   },
-
   {
     "nvim-telescope/telescope.nvim",
     keys = {
@@ -54,6 +52,14 @@ return {
       { "<leader>/", false },
       { "<leader>:", false },
       { "<leader><space>", false },
+    },
+  },
+  {
+    "akinsho/bufferline.nvim",
+    opts = {
+      options = {
+        always_show_bufferline = true,
+      },
     },
   },
 }
