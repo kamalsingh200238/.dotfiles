@@ -46,15 +46,6 @@ return {
     },
   },
   {
-    "nvim-telescope/telescope.nvim",
-    keys = {
-      { "<leader>,", false },
-      { "<leader>/", false },
-      { "<leader>:", false },
-      { "<leader><space>", false },
-    },
-  },
-  {
     "akinsho/bufferline.nvim",
     opts = {
       options = {
