@@ -23,4 +23,41 @@ return {
       { "<leader>pd", function() require("persistence").stop() end, desc = "Don't Save Current Session" },
     },
   },
+  {
+    "ibhagwan/fzf-lua",
+    opts = function(_, opts)
+      local actions = require("fzf-lua.actions")
+
+      return {
+        files = {
+          actions = {
+            ["alt-i"] = nil,
+            ["alt-h"] = nil,
+            ["ctrl-h"] = { actions.toggle_hidden },
+          },
+        },
+        grep = {
+          actions = {
+            ["ctrl-h"] = { actions.toggle_hidden },
+            ["alt-i"] = nil,
+            ["alt-h"] = nil,
+          },
+        },
+      }
+    end,
+  },
+  {
+    "nvchad/ui",
+    config = function()
+      require("nvchad")
+    end,
+  },
+  {
+    "nvchad/base46",
+    lazy = true,
+    build = function()
+      require("base46").load_all_highlights()
+    end,
+  },
+  "nvchad/volt",
 }
