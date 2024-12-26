@@ -16,4 +16,3 @@ vim.keymap.set(
   "<Cmd>silent! update! | redraw<CR>",
   { desc = "Force write", noremap = true, silent = true }
 )
-vim.keymap.set("n", "<leader>uo", "<Cmd>lua require('nvchad.themes').open()<CR>", { desc = "Save file", silent = true, noremap = true })
