@@ -3,7 +3,6 @@
 -- Add any additional keymaps here
 -- This file is automatically loaded by lazyvim.config.init
 vim.keymap.del("n", "<leader>qq")
-vim.keymap.del("n", "<leader>w")
 vim.keymap.del("n", "<leader>wd")
 
 vim.keymap.set("n", "<leader>q", "<Cmd>confirm q<CR>", { desc = "Quit Window", silent = true, noremap = true })
