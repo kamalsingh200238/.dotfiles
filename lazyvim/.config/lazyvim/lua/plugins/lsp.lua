@@ -1,5 +1,11 @@
 return {
   {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      auto_install = true,
+    },
+  },
+  {
     "williamboman/mason.nvim",
     opts = function(_, opts)
       opts.ensure_installed = opts.ensure_installed or {}
@@ -18,6 +24,7 @@ return {
         html = { init_options = { provideFormatter = false } },
         cssls = { init_options = { provideFormatter = false } },
         emmet_ls = {},
+        templ = {},
       },
     },
   },
@@ -36,6 +43,8 @@ return {
         typescriptreact = { "prettierd", "prettier", stop_after_first = true },
         markdown = { "prettierd", stop_after_first = true },
         yaml = { "prettierd", "prettier", stop_after_first = true },
+        vue = { "prettierd", "prettier", stop_after_first = true },
+        templ = { "templ", "html" },
       },
     },
   },
