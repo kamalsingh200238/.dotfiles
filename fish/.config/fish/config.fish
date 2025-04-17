@@ -24,6 +24,8 @@ pyenv init - | source
 
 alias lvim="NVIM_APPNAME='lazyvim' nvim"
 alias avim="NVIM_APPNAME='astrovim' nvim"
+alias sail="./vendor/bin/sail"
+alias pint="./vendor/bin/pint"
 
 # pnpm
 set -gx PNPM_HOME $HOME/Library/pnpm
