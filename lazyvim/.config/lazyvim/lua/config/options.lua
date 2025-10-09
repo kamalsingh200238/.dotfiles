@@ -4,3 +4,4 @@
 --
 vim.g.autoformat = false
 vim.g.snacks_animate = false
+vim.opt.colorcolumn = "120"
