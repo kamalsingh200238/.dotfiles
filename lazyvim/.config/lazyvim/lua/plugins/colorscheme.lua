@@ -4,5 +4,8 @@ return {
     opts = {
       colorscheme = "catppuccin-mocha",
     },
-  }
+  },
+  {
+    "p00f/alabaster.nvim",
+  },
 }
