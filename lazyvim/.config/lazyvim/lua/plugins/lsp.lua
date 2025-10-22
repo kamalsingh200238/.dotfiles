@@ -6,7 +6,6 @@ return {
       local sources = {
         "clangd",
         "prettierd",
-        "htmlhint",
       }
       for _, value in ipairs(sources) do
         table.insert(opts.ensure_installed, value)
