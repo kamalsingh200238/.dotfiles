@@ -8,4 +8,10 @@ return {
   {
     "p00f/alabaster.nvim",
   },
+  {
+    "nmac427/guess-indent.nvim",
+    config = function()
+      require("guess-indent").setup({})
+    end,
+  },
 }
