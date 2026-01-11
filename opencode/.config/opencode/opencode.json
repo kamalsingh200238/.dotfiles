@@ -8,6 +8,7 @@
     "external_directory": "ask"
   },
   "plugin": [
-    "opencode-gemini-auth@latest"
+    "opencode-gemini-auth@latest",
+    "opencode-openai-codex-auth@4.2.0"
   ]
 }
