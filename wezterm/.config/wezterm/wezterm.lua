@@ -1,9 +1,12 @@
 local wezterm = require("wezterm")
+
 return {
-	-- color_scheme
 	color_scheme = "Catppuccin Mocha (Gogh)",
 
-	-- font
+	keys = {
+		{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
+	},
+
 	font = wezterm.font_with_fallback({
 		{ family = "JetBrains Mono", weight = "Bold" },
 		{ family = "Symbols Nerd Font", scale = 0.90 },
@@ -15,7 +18,7 @@ return {
 	-- Window
 	window_close_confirmation = "NeverPrompt",
 	window_background_opacity = 1,
-	window_padding = { -- For padding
+	window_padding = {
 		left = 0,
 		right = 0,
 		top = 0,
@@ -24,7 +27,6 @@ return {
 
 	force_reverse_video_cursor = true,
 
-	-- Tabs
 	hide_tab_bar_if_only_one_tab = true,
 	tab_bar_at_bottom = false,
 	tab_max_width = 2,
