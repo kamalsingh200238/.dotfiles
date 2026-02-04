@@ -10,8 +10,7 @@
     "external_directory": "ask"
   },
   "plugin": [
-    "opencode-antigravity-auth@beta",
-    "opencode-openai-codex-auth@latest"
+    "opencode-antigravity-auth@latest",
   ],
   "provider": {
     "google": {
