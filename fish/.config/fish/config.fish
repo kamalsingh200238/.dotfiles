@@ -13,6 +13,7 @@ set -Ux fifc_keybinding \cx
 set -Ux PYENV_ROOT $HOME/.pyenv
 
 # Set global variables for environment paths and tools
+set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx COMPOSER_HOME $HOME/.composer
 set -gx EDITOR nvim
 set -gx VISUAL nvim
