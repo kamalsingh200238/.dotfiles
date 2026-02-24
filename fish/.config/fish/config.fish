@@ -23,7 +23,6 @@ starship init fish | source
 zoxide init fish | source
 pyenv init - | source
 
-alias lvim="NVIM_APPNAME='lazyvim' nvim"
 alias cvim="NVIM_APPNAME='nvchad' nvim"
 alias sail="./vendor/bin/sail"
 alias pint="./vendor/bin/pint"
