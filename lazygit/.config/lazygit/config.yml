@@ -1,8 +1,6 @@
 git:
   pagers:
     - pager: delta --dark --paging=never --side-by-side
-    - pager: ydiff -p cat -s --wrap --width={{columnWidth}}
-      colorArg: never
     - pager: delta --dark --paging=never
 gui:
   sidePanelWidth: 0.3
