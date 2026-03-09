@@ -39,8 +39,8 @@
       }
     ]
   },
-  "outputStyle": "default",
   "enabledPlugins": {
     "gopls-lsp@claude-plugins-official": true
-  }
+  },
+  "outputStyle": "default"
 }
