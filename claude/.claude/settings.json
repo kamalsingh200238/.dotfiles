@@ -1,5 +1,8 @@
 {
   "permissions": {
+    "allow": [
+      "WebFetch"
+    ],
     "deny": [
       "Bash(sudo:*)",
       "Bash(rm:*)"
