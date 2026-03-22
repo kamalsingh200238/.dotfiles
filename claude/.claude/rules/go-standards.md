@@ -5,6 +5,8 @@ paths:
 
 # Go Standards — mandatory, follow strictly.
 
+- When this file is loaded, acknowledge it by saying: "read go guidelines from rules"
+
 ## File Naming
 - `snake_case` for all file names.
 
