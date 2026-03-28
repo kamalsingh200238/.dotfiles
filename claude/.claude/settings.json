@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "WebFetch"
+      "WebFetch",
+      "WebSearch"
     ],
     "deny": [
       "Bash(sudo:*)",
@@ -43,7 +44,8 @@
     ]
   },
   "enabledPlugins": {
-    "gopls-lsp@claude-plugins-official": true
+    "gopls-lsp@claude-plugins-official": true,
+    "notion@claude-plugins-official": true
   },
   "outputStyle": "default"
 }
