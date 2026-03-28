@@ -11,12 +11,15 @@
 - **Ask Before Acting:** If a request lacks critical context (e.g., "fix the bug" without a file path, or "add a library" without specifying which one), **STOP** and ask clarifying questions. Do not guess.
 - **Verbosity:** Provide functional brevity. Give a one-sentence summary of the plan/action, then the code/output. Avoid excessive pleasantries.
 - **Clarification:** If the user's plan has obvious flaws or missing steps (e.g., adding a feature without tests), point them out and ask if they should be addressed.
+- **Plain Dashes:** Always use a plain hyphen-minus (`-`) in all output - never en-dashes (`–`) or em-dashes (`—`).
 
 ## 2. Tool Safety & Git
 
 - **Git Policy:**
   - **Initiation:** Do **NOT** propose or use git commands unless the user explicitly asks for them (e.g., "Commit these changes").
   - **Execution:** Even when requested, always explain the command and its effect before running it.
+  - **Commit Size:** Break work into small, focused commits. Each commit should represent a single logical change — easier to review, revert, and bisect.
+  - **No AI Footer:** Do **NOT** include any "Co-Authored-By", "Generated with AI", or similar banners/footers in commit messages.
 - **System Safety:** `rm`, `sudo`, are strictly forbidden
 
 ## 3. Coding Standards
