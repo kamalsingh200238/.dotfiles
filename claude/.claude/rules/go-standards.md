@@ -8,9 +8,11 @@ paths:
 - When this file is loaded, acknowledge it by saying: "read go guidelines from rules"
 
 ## File Naming
+
 - `snake_case` for all file names.
 
 ## Good Practices
+
 - Structs, types, interfaces, functions: **unexported** until needed by another package.
 - Struct fields: **exported** by default (required for `encoding/json`, zerolog, reflection). Unexport only with a specific reason — the unexported struct already gates external access.
 - Structs with 6-8+ fields: pass by pointer.
@@ -22,7 +24,9 @@ paths:
 - Provide `newXxx()` for structs with required fields or invariants.
 
 ## Enums
+
 No `iota`, no string constants. Struct-based pattern:
+
 - Unexported struct, unexported fields.
 - Values as **functions** (not `var`).
 - Methods: `String()`, `Equals(other) bool`, `ParseXxx(string) (Xxx, error)`, `MarshalJSON()`, `UnmarshalJSON()`.
@@ -41,6 +45,7 @@ func (c *color) UnmarshalJSON(b []byte) error { ... }
 ```
 
 ## Error Handling
+
 - Reuse `err` with `=`. No `readErr`, `writeErr` variants.
 - Always wrap: `fmt.Errorf("failed to <action>: %w", err)`.
 - Always use `errors.Is()` / `errors.As()`. No string comparison, no manual type assertion.
