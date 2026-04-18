@@ -47,5 +47,6 @@
     "gopls-lsp@claude-plugins-official": true,
     "notion@claude-plugins-official": true
   },
-  "outputStyle": "default"
+  "outputStyle": "default",
+  "effortLevel": "high"
 }
