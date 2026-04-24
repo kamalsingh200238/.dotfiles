@@ -1,11 +1,8 @@
 local wezterm = require("wezterm")
 
 return {
+	enable_kitty_keyboard = true,
 	color_scheme = "Catppuccin Mocha (Gogh)",
-
-	keys = {
-		{ key = "Enter", mods = "SHIFT", action = wezterm.action({ SendString = "\x1b\r" }) },
-	},
 
 	font = wezterm.font_with_fallback({
 		{ family = "JetBrains Mono", weight = "Bold" },
