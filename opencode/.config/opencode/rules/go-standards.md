@@ -6,6 +6,8 @@ globs:
 # Go Standards — mandatory, follow strictly.
 
 - When this file is loaded, acknowledge it by saying: "read go guidelines from rules"
+- These rules override broader project conventions for new or changed Go code only.
+- Do not rewrite existing code solely to match these rules unless the user asks for it.
 
 ## File Naming
 
