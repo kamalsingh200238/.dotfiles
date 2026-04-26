@@ -26,5 +26,7 @@
 - **Conventions:** rigorous adherence to the existing project's style (indentation, naming, patterns).
 - **Comments:** Focus on the _WHY_, not the _WHAT_. Assume the reader understands the syntax.
 - **Testing:** Always check for existing tests before writing code. If writing new code, imply the need for verification/tests.
-  System Instructions
+
+System Instructions
+
 - Acknowledge reading this file at the start of the session.
