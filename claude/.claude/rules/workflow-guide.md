@@ -2,47 +2,34 @@
 
 Work in small, reviewable slices. Never ship a full feature in one pass.
 
-## Rules
+## How to work
 
-- **Stop after every phase.** Wait for explicit approval before continuing.
-- **One phase = one commit.** Small, focused, reviewable on its own.
-- **No speculative code.** Don't scaffold anything the current phase doesn't use.
-- **Target ~150 lines of meaningful diff per phase.** If a phase will exceed that, split it and ask.
-- **Build like a developer, not a generator.** Each phase should be a natural checkpoint a careful engineer would commit at.
+- Start with a plan that breaks the work into phases and sub-phases.
+- Keep each phase as a small, independently reviewable feature slice.
+- Keep each sub-phase as the smallest commit-sized unit.
+- Build only what the current sub-phase needs.
+- Treat each phase like a careful developer checkpoint, not a generated dump.
 
-## Phasing principle
+## How to split work
 
-Split features so each phase is independently reviewable:
+Split by feature, then split each feature into concrete implementation steps.
 
-1. **Plan** — list phases with one-line descriptions and rough diff sizes. Stop for approval.
-2. **Skeleton** — minimal runnable scaffold. No business logic, no per-feature code.
-3. **Foundation** — shared infra (DB wiring, config, etc.) with no feature logic on top.
-4. **Per-feature slices** — for each feature/endpoint/RPC, split into:
-   - **Data layer** — schema, migrations, repo methods, unit tests
-   - **Interface layer** — public API (proto/HTTP/etc.), handler, validation, error mapping, tests
+Example for a REST API:
 
-   Do one feature fully (data → interface) before starting the next.
+- **Phase 1** — one endpoint or one coherent slice
+  - **1.1** — DB migration + route map + controller + validation + request/response wiring
+  - **1.2** — tests for that slice
+- **Phase 2** — the next endpoint or slice
+  - **2.1** — implementation
+  - **2.2** — tests for that slice
 
-5. **Polish** — logging, metrics, docs. Only if needed, split by concern.
+Finish one slice before starting the next. Do not scaffold the entire API, all routes, or all controllers up front.
 
-Example (3-RPC gRPC server): Plan → Skeleton → DB foundation → RPC1 data → RPC1 handler → RPC2 data → RPC2 handler → RPC3 data → RPC3 handler. Each is one commit.
+## How to commit
 
-## Per-phase checklist
-
-Before handing back:
-
-- Build passes
-- Tests pass
-- Working tree is clean of unintended changes
-- One commit for the phase
-
-## Commit format
-
-Each phase is a single commit with:
-
-- **Subject:** short, imperative, to the point. No fluff, no scope beyond the phase.
-  `add user repo with create/get` — not `phase 3: various changes for user stuff`
-- **Blank line, then description:** what was done, what was tested, what was deferred. Short bullets are fine.
+- **One sub-phase = one commit.**
+- Commit subject: short, imperative, and specific.
+- Commit description: what changed and what was tested.
 
 Example:
 
@@ -51,12 +38,10 @@ add user repo with create/get
 
 - CreateUser, GetUserByID on userRepo
 - unit tests against testcontainers postgres
-- deferred: update/delete until those RPCs land
+- update/delete until those RPCs land
 ```
 
-No phase numbers in subjects — the description carries context, the subject stands on its own if cherry-picked or searched later.
-
-## Stop format
+## What to print after each phase
 
 End every phase with exactly:
 
@@ -75,10 +60,10 @@ Then stop.
 
 ## Anti-patterns
 
-- Scaffolding all features upfront "since we know them"
-- Combining data + interface layers in one commit
-- Writing all migrations at once
-- Refactoring earlier phases unprompted
-- "While I was in there, I also..."
-- Vague commit subjects (`updates`, `wip`, `phase 2 changes`)
+- Scaffolding future work “just in case”
+- Combining multiple sub-phases into one commit
+- Writing all migrations, routes, controllers, or validators at once
+- Refactoring earlier phases without being asked
+- Adding unrelated changes because you are already editing nearby code
+- Vague commit subjects like `updates`, `wip`, or `phase 2 changes`
 - Squashing multiple phases into one commit
