@@ -2,15 +2,52 @@
   "$schema": "https://opencode.ai/config.json",
   "default_agent": "plan",
   "permission": {
-    "edit": "ask",
+    "edit": "allow",
+    "external_directory": "deny",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
     "bash": {
-      "sudo*": "deny",
-      "rm*": "deny",
-      "*": "ask"
+      "*": "ask",
+      "sudo *": "deny",
+      "rm *": "ask",
+      "ls *": "allow",
+      "git status *": "allow",
+      "git diff *": "allow",
+      "git log *": "allow",
+      "git show *": "allow",
+      "git branch *": "allow",
+      "git rev-parse *": "allow",
+      "git ls-files *": "allow",
+      "git add *": "allow",
+      "git commit *": "ask",
+      "git rm *": "ask",
+      "git reset *": "ask",
+      "git clean *": "ask",
+      "git checkout *": "ask",
+      "git switch *": "ask",
+      "git restore *": "ask",
+      "git revert *": "ask",
+      "git rebase *": "ask",
+      "git push *": "ask",
+      "jj status *": "allow",
+      "jj diff *": "allow",
+      "jj log *": "allow",
+      "jj show *": "allow",
+      "jj print *": "allow",
+      "jj new *": "allow",
+      "jj commit *": "ask",
+      "jj bookmark create *": "allow",
+      "jj abandon *": "ask",
+      "jj restore *": "ask",
+      "jj undo *": "ask",
+      "jj op abandon *": "ask",
     },
     "webfetch": "allow",
     "doom_loop": "ask",
-    "external_directory": "ask"
   },
   "plugin": [
     "opencode-rules@latest"
@@ -19,7 +56,7 @@
     "notion": {
       "type": "remote",
       "url": "https://mcp.notion.com/mcp",
-      "enabled": true
+      "enabled": false
     },
   }
 }
