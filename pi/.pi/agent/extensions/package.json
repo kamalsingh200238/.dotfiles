@@ -1,0 +1,13 @@
+{
+	"name": "pi-agent-extensions",
+	"private": true,
+	"dependencies": {
+		"@mariozechner/pi-coding-agent": "^0.70.6",
+		"cheerio": "^1.2.0",
+		"turndown": "^7.2.4",
+		"typebox": "^1.1.34"
+	},
+	"devDependencies": {
+		"@types/turndown": "^5.0.6"
+	}
+}
