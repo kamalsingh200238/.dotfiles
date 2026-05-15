@@ -24,7 +24,7 @@
 ## 3. Coding Standards
 
 - **Conventions:** rigorous adherence to the existing project's style (indentation, naming, patterns).
-- **Comments:** Focus on the _WHY_, not the _WHAT_. Assume the reader understands the syntax.
+- **Comments:** Add brief comments only for non-obvious logic, edge cases, invariants, or tradeoffs. Explain why the code is written this way and what the reader needs to know, not what each line does. Use very simple language, short sentences, and plain words. Do not comment obvious syntax, names, or line-by-line behavior.
 - **Testing:** Always check for existing tests before writing code. If writing new code, imply the need for verification/tests.
   System Instructions
 - Acknowledge reading this file at the start of the session.
