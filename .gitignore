@@ -4,3 +4,4 @@ fish_variables
 /opencode/.config/opencode/package-lock.json
 node_modules
 /claude/.claude/rings/ring.mp3
+/jj/.config/jj/repos
