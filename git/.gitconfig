@@ -1,0 +1,7 @@
+[user]
+	email = kamalsingh200238@gmail.com
+	name = Kamal Singh
+[init]
+	defaultBranch = main
+[includeIf "gitdir:~/dev/"]
+    path = ~/.gitconfig-work
