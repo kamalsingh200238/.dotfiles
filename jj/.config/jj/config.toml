@@ -1,0 +1,12 @@
+#:schema https://docs.jj-vcs.dev/latest/config-schema.json
+
+[user]
+name = "Kamal Singh"
+email = "kamal.singh@exa.net.uk"
+
+[ui]
+diff-formatter = ["delta", "--side-by-side", "--width", "$width", "$left", "$right"]
+pager = "delta"
+
+[merge-tools.delta]
+diff-expected-exit-codes = [0, 1]
