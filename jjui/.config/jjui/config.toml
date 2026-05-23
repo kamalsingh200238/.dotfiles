@@ -1,0 +1,23 @@
+# ~/.config/jjui/config.toml
+
+[preview]
+revision_command = ["show", "--config", 'ui.diff-formatter=["delta","--width","$width","$left","$right"]', "-r", "$change_id"]
+file_command = ["diff", "--config", 'ui.diff-formatter=["delta","--width","$width","$left","$right"]', "-r", "$change_id", "--", "$file"]
+
+[[actions]]
+name = "revisions.diff"
+lua = '''
+local out = jj("show",
+  "--config", 'ui.diff-formatter=["delta","--side-by-side","--width","$width","$left","$right"]',
+  "-r", context.change_id())
+diff.show(out)
+'''
+
+[[actions]]
+name = "revisions.details.diff"
+lua = '''
+local out = jj("diff",
+  "--config", 'ui.diff-formatter=["delta","--side-by-side","--width","$width","$left","$right"]',
+  "-r", context.change_id(), "--", context.file())
+diff.show(out)
+'''
