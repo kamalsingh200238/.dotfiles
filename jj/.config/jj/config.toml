@@ -2,6 +2,12 @@
 
 [user]
 name = "Kamal Singh"
+email = "kamalsingh200238@gmail.com"
+
+[[--scope]]
+--when.repositories = ["~/dev"]
+[--scope.user]
+name = "Kamal Singh"
 email = "kamal.singh@exa.net.uk"
 
 [ui]
