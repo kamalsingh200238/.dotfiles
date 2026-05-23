@@ -3,7 +3,10 @@
   "default_agent": "plan",
   "permission": {
     "edit": "allow",
-    "external_directory": "ask",
+    "external_directory": {
+      "*": "ask",
+      "~/personal/*": "allow"
+    },
     "read": {
       "*": "allow",
       "*.env": "deny",
