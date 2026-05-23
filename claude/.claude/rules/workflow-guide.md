@@ -1,57 +1,64 @@
 # Development Workflow
 
-Work in small, reviewable slices. Never ship a full feature in one pass.
+Use a strict `plan -> work -> review -> commit` flow.
 
-## How to work
+## Core Rules
 
-- Start with a plan that breaks the work into phases and sub-phases.
-- Keep each phase as a small, independently reviewable feature slice.
-- Keep each sub-phase as the smallest commit-sized unit.
-- Build only what the current sub-phase needs.
-- Treat each phase like a careful developer checkpoint, not a generated dump.
+- Plan the work before starting a new task.
+- Implement one approved sub-phase at a time.
+- Review the current slice before any commit.
+- Commit only after review.
+- Never start new work until current work is reviewed and committed.
+- This rule applies to both `jj` and `git` repos.
 
-## How to split work
+## Planning
 
-Split by feature, then split each feature into concrete implementation steps.
+- Break large work into small reviewable phases.
+- Break each phase into concrete sub-phases.
+- Each sub-phase must be one commit.
+- If the task is small, use one phase with one sub-phase.
+- Gather missing context before planning when real ambiguity exists.
+- Do not scaffold future work just in case.
 
-Example for a REST API:
+## Working
 
-- **Phase 1** — one endpoint or one coherent slice
-  - **1.1** — DB migration + route map + controller + validation + request/response wiring
-  - **1.2** — tests for that slice
-- **Phase 2** — the next endpoint or slice
-  - **2.1** — implementation
-  - **2.2** — tests for that slice
+- Implement only the approved sub-phase.
+- Do not pull in future phases, optional cleanup, or unrelated refactors.
+- In `jj` repos, create a fresh working commit for a new approved sub-phase only after the previous slice is done and committed.
+- In `git` repos, do not start a new slice on top of unfinished work.
 
-Finish one slice before starting the next. Do not scaffold the entire API, all routes, or all controllers up front.
+## Review
 
-## How to commit
+- Review the current slice before commit.
+- Look for bugs, missed requirements, dead code, weak cleanup, regressions, missing tests, missed edge cases, and simpler or better approaches.
+- Be practical. Do not fixate on tiny unrealistic edge cases that make the code worse.
+- Report findings to the user and wait for confirmation.
 
-- **One sub-phase = one commit.**
-- Commit subject: short, imperative, and specific.
-- Commit description: what changed and what was tested.
+## Commit
 
-Example:
+- One sub-phase equals one commit.
+- Commit only the current approved sub-phase.
+- Do not bundle unrelated work.
+- Commit subject: one short plain line.
+- Commit body: short plain sentences.
+- Explain what changed.
+- If the code exists because of a quirk or non-obvious constraint, explain the problem, why the code exists, and how it solves it.
+- Mention what was tested.
 
-```
-add user repo with create/get
+## Completion
 
-- CreateUser, GetUserByID on userRepo
-- unit tests against testcontainers postgres
-- update/delete until those RPCs land
-```
-
-## What to print after each phase
-
-End every phase with exactly:
+After a successful commit, print:
 
 ```
 PHASE COMPLETE
 Commit: <hash/id> <subject>
 Diff: ~<N> lines / <M> files
-Changed: <bullets>
-Tested: <bullets>
-Deferred: <bullets>
+Changed:
+- <bullets>
+Tested:
+- <bullets>
+Deferred:
+- <bullets>
 Next: <one line>
 Waiting for approval.
 ```
@@ -60,10 +67,10 @@ Then stop.
 
 ## Anti-patterns
 
-- Scaffolding future work “just in case”
+- Starting new work on top of unfinished work
+- Scaffolding future work just in case
 - Combining multiple sub-phases into one commit
-- Writing all migrations, routes, controllers, or validators at once
 - Refactoring earlier phases without being asked
-- Adding unrelated changes because you are already editing nearby code
+- Adding unrelated changes because nearby code is already open
 - Vague commit subjects like `updates`, `wip`, or `phase 2 changes`
-- Squashing multiple phases into one commit
+- Overengineering for tiny unrealistic edge cases
