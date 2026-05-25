@@ -17,7 +17,7 @@ set -gx XDG_CONFIG_HOME $HOME/.config
 set -gx COMPOSER_HOME $HOME/.composer
 set -gx EDITOR nvim
 set -gx VISUAL nvim
-set -gx PATH $HOME/go/bin $HOME/.local/bin $PYENV_ROOT/bin $COMPOSER_HOME/vendor/bin $PATH
+fish_add_path $HOME/go/bin $HOME/.local/bin $PYENV_ROOT/bin $COMPOSER_HOME/vendor/bin $HOME/.cargo/bin
 
 starship init fish | source
 zoxide init fish | source
