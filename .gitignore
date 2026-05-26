@@ -1,7 +1,7 @@
-lazygit/.config/lazygit/state.yml
-lazy-lock.json
-fish_variables
-/opencode/.config/opencode/package-lock.json
-node_modules
 /claude/.claude/rings/ring.mp3
 /jj/.config/jj/repos
+/opencode/.config/opencode/package-lock.json
+fish_variables
+lazy-lock.json
+lazygit/.config/lazygit/state.yml
+node_modules
