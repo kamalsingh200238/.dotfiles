@@ -1,5 +1,5 @@
 function gprettier --description "Global Prettier with plugins"
-    set -l GLOBAL_PRETTIER_HOME "$HOME/dev/global-prettier"
+    set -l GLOBAL_PRETTIER_HOME "$HOME/.dotfiles/global-prettier"
     set -l original_dir (pwd)
 
     # Resolve all file arguments to absolute paths before cd
