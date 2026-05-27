@@ -13,3 +13,4 @@ fish_variables
 lazy-lock.json
 lazygit/.config/lazygit/state.yml
 node_modules
+/claude/.claude/.last-cleanup
