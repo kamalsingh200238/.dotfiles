@@ -27,6 +27,10 @@ alias cvim="NVIM_APPNAME='nvchad' nvim"
 alias sail="./vendor/bin/sail"
 alias pint="./vendor/bin/pint"
 
+if command -q eza
+    alias ls="eza"
+end
+
 # pnpm
 set -gx PNPM_HOME "$HOME/Library/pnpm"
 if not string match -q -- "$PNPM_HOME/bin" $PATH
