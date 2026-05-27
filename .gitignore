@@ -1,4 +1,12 @@
+/claude/.claude/backups
+/claude/.claude/cache
+/claude/.claude/history.jsonl
+/claude/.claude/mcp-needs-auth-cache.json
+/claude/.claude/plugins
+/claude/.claude/projects/-Users-kamal-singh--dotfiles
 /claude/.claude/rings/ring.mp3
+/claude/.claude/sessions
+/claude/.claude/shell-snapshots
 /jj/.config/jj/repos
 /opencode/.config/opencode/package-lock.json
 fish_variables
