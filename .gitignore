@@ -1,8 +1,11 @@
+/claude/.claude/.last-cleanup
+/claude/.claude/.last-update-result.json
 /claude/.claude/backups
 /claude/.claude/cache
 /claude/.claude/file-history
 /claude/.claude/history.jsonl
 /claude/.claude/mcp-needs-auth-cache.json
+/claude/.claude/plans
 /claude/.claude/plugins
 /claude/.claude/projects
 /claude/.claude/sessions
@@ -13,4 +16,3 @@ fish_variables
 lazy-lock.json
 lazygit/.config/lazygit/state.yml
 node_modules
-/claude/.claude/.last-cleanup
