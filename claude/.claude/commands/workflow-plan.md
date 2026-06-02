@@ -1,6 +1,5 @@
 ---
 description: Plan work in phases and commit-sized sub-phases
-agent: plan
 ---
 
 Plan this work request:

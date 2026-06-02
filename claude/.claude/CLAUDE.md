@@ -15,6 +15,9 @@
 
 ## 2. Tool Safety & Git
 
+- **VCS Detection:** Before any version control action, detect whether the repo uses `jj` or `git`. Do not assume both. Use the repo's real workflow.
+- **Prefer jj:** When both `jj` and `git` are present, prefer `jj`.
+- **Commit Leaves a Fresh Commit:** When committing, record the current work and ensure a new empty working commit is present on top for the next slice (e.g. `jj commit` / `jj new`).
 - **Git Policy:**
   - **Initiation:** Do **NOT** propose or use git commands unless the user explicitly asks for them (e.g., "Commit these changes").
   - **Execution:** Even when requested, always explain the command and its effect before running it.

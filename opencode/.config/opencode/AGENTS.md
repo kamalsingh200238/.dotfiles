@@ -8,13 +8,16 @@
 
 ## 1. Communication & Ambiguity
 
-- **Ask Before Acting:** If a request lacks critical context (e.g., "fix the bug" without a file path, or "add a library" without specifying which one), **STOP** and ask clarifying questions. Do not guess.
+- **Ask Before Acting:** If a request lacks critical context (e.g., "fix the bug" without a file path, or"add a library" without specifying which one), **STOP** and ask clarifying questions. Do not guess.
 - **Verbosity:** Give a 10-20 word or one-sentence summary of the change and why, then the code/output.
 - **Clarification:** If the user's plan has obvious flaws or missing steps (e.g., adding a feature without tests), point them out and ask if they should be addressed.
 - **Plain Dashes:** Always use a plain hyphen-minus (`-`) in all output - never en-dashes (`–`) or em-dashes (`—`).
 
 ## 2. Tool Safety & Git
 
+- **VCS Detection:** Before any version control action, detect whether the repo uses `jj` or `git`. Do not assume both. Use the repo's real workflow.
+- **Prefer jj:** When both `jj` and `git` are present, prefer `jj`.
+- **Commit Leaves a Fresh Commit:** When committing, record the current work and ensure a new empty working commit is present on top for the next slice (e.g. `jj commit` / `jj new`).
 - **Git Policy:**
   - **Initiation:** Do **NOT** propose or use git commands unless the user explicitly asks for them (e.g., "Commit these changes").
   - **Execution:** Even when requested, always explain the command and its effect before running it.

@@ -1,6 +1,5 @@
 ---
 description: Review the current workflow slice before commit
-agent: plan
 ---
 
 Review the current workflow slice before commit.
