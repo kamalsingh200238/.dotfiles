@@ -4,7 +4,9 @@
 /claude/.claude/cache
 /claude/.claude/file-history
 /claude/.claude/history.jsonl
+/claude/.claude/image-cache
 /claude/.claude/mcp-needs-auth-cache.json
+/claude/.claude/paste-cache
 /claude/.claude/plans
 /claude/.claude/plugins
 /claude/.claude/projects
