@@ -11,6 +11,7 @@
 /claude/.claude/plugins
 /claude/.claude/projects
 /claude/.claude/sessions
+/claude/.claude/session-env
 /claude/.claude/shell-snapshots
 /jj/.config/jj/repos
 /opencode/.config/opencode/package-lock.json
