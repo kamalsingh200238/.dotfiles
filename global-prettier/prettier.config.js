@@ -14,5 +14,11 @@ export default {
         parser: 'jinja-template',
       },
     },
+    {
+      files: ['*.md', '*.mdx'],
+      options: {
+        proseWrap: 'always',
+      },
+    },
   ],
 }
