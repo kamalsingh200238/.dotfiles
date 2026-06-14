@@ -8,8 +8,9 @@ Run the workflow autonomously up to and including a target sub-phase:
 $ARGUMENTS
 
 Argument forms (parse from $ARGUMENTS):
-- `<target>` - e.g. `2.3`. Uses the most-recently-modified plan in `.opencode/plans/` (error if none or more than one).
-- `<plan-slug> <target>` - e.g. `add-dark-mode 2.3`. Reads `.opencode/plans/<plan-slug>.md`.
+
+- `<target>` - e.g. `2.3`. Uses the most-recently-modified plan in `.claude/plans/` (error if none or more than one).
+- `<plan-slug> <target>` - e.g. `add-dark-mode 2.3`. Reads `.cluade/plans/<plan-slug>.md`.
 
 ## Pre-flight
 
@@ -19,6 +20,7 @@ Argument forms (parse from $ARGUMENTS):
   - `~/.config/opencode/commands/workflow-commit.md`
 
   Their bodies are the source of truth for the Work / Review / Commit steps below. Do not paraphrase from memory. If any file fails to read, STOP and report it.
+
 - Follow the version control rules in AGENTS.md. Detect jj vs git.
 - If the working copy has uncommitted or unreviewed work, STOP. Print what's there and tell the user to finish or stash it. Do not start the loop.
 - Read the plan file. Parse its sub-phase list (lines like `- [ ] 1.1 - ...` or `- [x] 1.1 - ...`).
