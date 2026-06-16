@@ -1,18 +1,23 @@
 ---
-description: Resolve jj rebase/merge conflicts one commit at a time, squashing each fix into the conflicted commit
-agent: build
+name: jj-resolve
+description:
+  Resolve jj rebase/merge conflicts one commit at a time. For each conflicted commit, creates a child commit, resolves
+  the conflict there (asking the user when the resolution is non-obvious), then squashes the fix back into the original
+  commit so the conflict and its fix live together. Use after a jj rebase/merge/new that produced conflicts, or whenever
+  the user asks to resolve jj conflicts.
 ---
+
+# jj-resolve
 
 Resolve jj conflicts one commit at a time, keeping each fix inside the commit that introduced it.
 
-Optional starting revset (defaults to all `conflict()`):
-
-$ARGUMENTS
+If the user passed an optional starting revset, scope the survey in step 1 to that revset; otherwise default to
+`conflict()`.
 
 ## Hard rules
 
 - NEVER run `jj squash`, `jj abandon`, `jj restore`, `jj undo`, `jj op restore` without explicit user approval in this
-  turn.
+  turn. They are gated by `opencode.jsonc` and the user prompt is the gate -- do not bypass.
 - NEVER guess when both sides have real semantic changes. STOP and ask, showing both sides verbatim.
 - Resolve oldest first; resolving an ancestor often clears descendant conflicts automatically.
 - One commit at a time. Finish it (resolve + verify + squash) before moving on.
@@ -40,7 +45,7 @@ For each file:
 1. Read it; find each `<<<<<<<` / `=======` / `>>>>>>>` block.
 2. Decide:
    - **Obvious** (formatting, rename already applied on one side, deleted-on-one-side where the other is live): resolve
-     directly.
+     with `Edit`.
    - **Non-obvious**: STOP and ask. Show both sides verbatim, label them by their commit (use `jj evolog` / `jj log` to
      identify), and only propose a side if you have a real reason.
 3. Re-read; confirm zero markers remain.
