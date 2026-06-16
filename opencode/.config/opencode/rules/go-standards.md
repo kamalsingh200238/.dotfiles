@@ -1,6 +1,6 @@
 ---
 globs:
-  - "**/*.go"
+  - '**/*.go'
 ---
 
 # Go Standards — mandatory, follow strictly.
@@ -16,12 +16,12 @@ globs:
 ## Good Practices
 
 - Structs, types, interfaces, functions: **unexported** until needed by another package.
-- Struct fields: **exported** by default (required for `encoding/json`, zerolog, reflection).
-  Unexport only with a specific reason — the unexported struct already gates external access.
+- Struct fields: **exported** by default (required for `encoding/json`, zerolog, reflection). Unexport only with a
+  specific reason — the unexported struct already gates external access.
 - Structs with 6-8+ fields: pass by pointer.
 - Range loops: index-only, access via `items[i]`. No value variable from `range` unless user asks.
-- Always propagate `context.Context` from caller. `context.Background()`/`context.TODO()` only at entry points
-  (`main`, handlers, tests).
+- Always propagate `context.Context` from caller. `context.Background()`/`context.TODO()` only at entry points (`main`,
+  handlers, tests).
 - No `init()`. Use `newXxx()` constructors.
 - Preallocate slices when length is known: `make([]T, 0, n)`.
 - Early returns with guard clauses. No `else` after error/edge-case `if`.

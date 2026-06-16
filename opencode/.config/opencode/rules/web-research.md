@@ -1,6 +1,6 @@
 ---
 tools:
-  - "mcp_websearch"
+  - 'mcp_websearch'
 ---
 
 # Web Research — mandatory when searching or fetching web content.
