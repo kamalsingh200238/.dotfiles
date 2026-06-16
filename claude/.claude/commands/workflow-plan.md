@@ -14,7 +14,10 @@ $ARGUMENTS
 - Call out missing product, API, data, UX, migration, rollout, or testing details that would change the plan.
 - Do not write code, edit files, or commit.
 
-After producing the plan, save it to `.claude/plans/<slug>.md` in the project root, where `<slug>` is a short kebab-case name you derive from the work request. Create the `.claude/plans/` directory if it does not exist. If a plan with the same slug already exists, ask the user whether to overwrite, pick a new slug, or abort. Print the saved path on the last line.
+After producing the plan, save it to `.claude/plans/<slug>.md` in the project root, where `<slug>` is a short kebab-case
+name you derive from the work request. Create the `.claude/plans/` directory if it does not exist. If a plan with the
+same slug already exists, ask the user whether to overwrite, pick a new slug, or abort. Print the saved path on the last
+line.
 
 Use this exact format in the file so `/workflow-run` can track progress by ticking sub-phase checkboxes:
 
