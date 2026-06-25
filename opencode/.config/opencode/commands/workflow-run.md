@@ -56,7 +56,8 @@ For each sub-phase from `current` up to and including `target`:
    fresh working commit on top per AGENTS.md.
 
 6. **Tick the plan**: edit the plan file to change `- [ ] <id> - ...` to `- [x] <id> - ...` for the just-committed
-   sub-phase. This is how progress survives session restarts.
+   sub-phase. This is how progress survives session restarts. Do this AFTER the commit so the tick edit stays in the
+   working copy and is never bundled into the sub-phase commit.
 
 7. **Advance**: move to the next unchecked sub-phase. If it is past `target`, exit the loop.
 
@@ -86,6 +87,9 @@ To review each commit yourself:
 ## Hard rules
 
 - Never skip the review-and-fix step.
+- Never commit the plan file. The plan in `.claude/plans/` is not version-controlled work; it is a local checklist.
+  Tick checkboxes in it freely, but exclude it from every sub-phase commit. If your VCS would auto-stage it, exclude it
+  explicitly.
 - Never bundle multiple sub-phases into one commit.
 - Never apply Optional or Not-Worth-Now findings in autonomous mode.
 - Never continue past a failed verification or an unresolved Must-Fix after 2 rounds.

@@ -10,6 +10,8 @@ $ARGUMENTS
 
 - Inspect repo state. Follow the version control rules in CLAUDE.md.
 - Commit only the current approved sub-phase. Never bundle unrelated work.
+- Never commit the plan file in `.claude/plans/`. It is a local checklist, not version-controlled work. Exclude it from
+  the commit even if it has been edited (e.g. checkbox ticks).
 - If the changes were not reviewed, stop and tell the user to run /workflow-review first.
 - Record the work and leave a fresh working commit present on top for the next slice (see CLAUDE.md).
 - Commit message: one short plain subject line; body in short plain sentences.

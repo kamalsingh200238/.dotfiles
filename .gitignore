@@ -10,9 +10,10 @@
 /claude/.claude/plans
 /claude/.claude/plugins
 /claude/.claude/projects
-/claude/.claude/sessions
 /claude/.claude/session-env
+/claude/.claude/sessions
 /claude/.claude/shell-snapshots
+/claude/.claude/tasks
 /jj/.config/jj/repos
 /opencode/.config/opencode/package-lock.json
 fish_variables
