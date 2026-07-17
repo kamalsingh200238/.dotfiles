@@ -2,9 +2,12 @@
 /claude/.claude/.last-update-result.json
 /claude/.claude/backups
 /claude/.claude/cache
+/claude/.claude/daemon
+/claude/.claude/daemon.log
 /claude/.claude/file-history
 /claude/.claude/history.jsonl
 /claude/.claude/image-cache
+/claude/.claude/jobs
 /claude/.claude/mcp-needs-auth-cache.json
 /claude/.claude/paste-cache
 /claude/.claude/plans
@@ -14,6 +17,7 @@
 /claude/.claude/sessions
 /claude/.claude/shell-snapshots
 /claude/.claude/tasks
+/claude/.claude/telemetry
 /jj/.config/jj/repos
 /opencode/.config/opencode/package-lock.json
 fish_variables

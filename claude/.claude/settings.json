@@ -77,7 +77,7 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-6[1m]",
+  "model": "claude-opus-4-6",
   "hooks": {
     "Stop": [
       {
