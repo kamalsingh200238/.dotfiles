@@ -23,6 +23,15 @@ return {
       servers = {
         cssls = { init_options = { provideFormatter = false } },
         html = { init_options = { provideFormatter = false } },
+        gopls = {
+          settings = {
+            gopls = {
+              analyses = {
+                ST1000 = false,
+              },
+            },
+          },
+        },
       },
     },
   },
