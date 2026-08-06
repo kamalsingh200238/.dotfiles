@@ -77,29 +77,10 @@
     ],
     "defaultMode": "default"
   },
-  "model": "claude-opus-4-6",
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/usr/bin/afplay -v 5 /Users/kamal.singh/.dotfiles/claude/.claude/rings/ring.mp3"
-          }
-        ]
-      }
-    ],
-    "Notification": [
-      {
-        "matcher": "permission_prompt|elicitation_dialog",
-        "hooks": [
-          {
-            "type": "command",
-            "command": "/usr/bin/afplay -v 5 /Users/kamal.singh/.dotfiles/claude/.claude/rings/ring.mp3"
-          }
-        ]
-      }
-    ]
+  "model": "opus[1m]",
+  "statusLine": {
+    "type": "command",
+    "command": "bash ~/.claude/statusline-command.sh"
   },
   "outputStyle": "default",
   "effortLevel": "high"
