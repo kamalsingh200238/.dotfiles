@@ -1,0 +1,15 @@
+[terminal]
+default_shell = "fish"
+
+[keys]
+prefix = "ctrl+space"
+new_tab = "prefix+t"
+split_horizontal = "prefix+d"
+split_vertical = "prefix+v"
+zoom = "prefix+f"
+copy_mode = "prefix+s"
+settings = "prefix+shift+s"
+
+[theme]
+name = "gruvbox"
+auto_switch = false
