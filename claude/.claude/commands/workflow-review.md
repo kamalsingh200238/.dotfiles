@@ -1,14 +1,14 @@
 ---
-description: Review the current workflow slice before commit
+description: Review the current workflow phase before commit
 ---
 
-Review the current workflow slice before commit.
+Review the current workflow phase before commit.
 
 Optional scope:
 
 $ARGUMENTS
 
-- Review only the current slice. Inspect the changes and the local context needed to understand them.
+- Review the entire current phase as one feature. Inspect all changes and the local context needed to understand them.
 - Look for bugs, missed requirements, dead code, weak cleanup, simpler approaches, regressions, missing tests, and
   missed edge cases.
 - Be practical. Prefer clarity over defensive complexity for unlikely cases.

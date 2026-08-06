@@ -1,17 +1,23 @@
 ---
-description: Commit one approved workflow sub-phase
+description: Commit one approved workflow phase
 ---
 
-Commit the current approved workflow sub-phase.
+Commit the current approved workflow phase.
 
 Optional commit subject:
 
 $ARGUMENTS
 
+## CRITICAL: Never commit plan files
+
+The plan file in `.claude/plans/` is a LOCAL checklist, NOT version-controlled work. You MUST exclude it from every
+commit, even if it has been modified (e.g. checkbox ticks). Stage files individually - never use broad add commands
+that would catch the plan file. The only exception is if the user explicitly asks you to commit the plan.
+
+## Rules
+
 - Inspect repo state. Follow the version control rules in CLAUDE.md.
-- Commit only the current approved sub-phase. Never bundle unrelated work.
-- Never commit the plan file in `.claude/plans/`. It is a local checklist, not version-controlled work. Exclude it from
-  the commit even if it has been edited (e.g. checkbox ticks).
+- Commit only the current approved phase. Never bundle unrelated work.
 - If the changes were not reviewed, stop and tell the user to run /workflow-review first.
 - Record the work and leave a fresh working commit present on top for the next slice (see CLAUDE.md).
 - Commit message: one short plain subject line; body in short plain sentences.

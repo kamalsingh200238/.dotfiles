@@ -1,5 +1,5 @@
 ---
-description: Plan work in phases and commit-sized sub-phases
+description: Plan work in feature-sized phases
 ---
 
 Plan this work request:
@@ -12,28 +12,31 @@ $ARGUMENTS
 - Check repo state. If there is unfinished or uncommitted work, stop and tell the user to review and commit it first.
 - Read the files that will be touched. Understand existing patterns, types, and naming so the plan references real
   things, not guesses.
-- Decide: multi-phase feature, or one phase with one sub-phase.
-- Break work into small reviewable phases, each phase into commit-sized sub-phases. One sub-phase = one commit.
+- Break work into feature-sized phases. One phase = one logical feature = one commit.
+  Example: "add auth" becomes Phase 1: register, Phase 2: login, Phase 3: logout, Phase 4: middleware.
+  Each phase should be a complete, reviewable unit that makes sense on its own.
+- Do NOT break phases into sub-phases or commit-sized slices. The phase IS the slice.
 - Build only what the current phase needs. No future scaffolding.
 - Call out missing product, API, data, UX, migration, rollout, or testing details that would change the plan.
 - Do not write code, edit files, or commit.
 
-## Writing sub-phases
+## Writing phases
 
 This plan will be executed by a fast model with less reasoning depth. It will follow instructions but will not infer
-gaps. Write each sub-phase so it knows what to build, what pieces to create, and how they connect - without writing
+gaps. Write each phase so it knows what to build, what pieces to create, and how they connect - without writing
 the actual code.
 
-Each sub-phase needs:
-- **Goal** - one line: what this achieves.
-- **Files** - which files to create or change.
-- **Steps** - short action items. Say what to do and what it should handle, name the helpers or components to create and
-  describe their job, mention how pieces connect to each other and to existing code. Reference real names from the
-  codebase (existing functions, types, routes, patterns) so the executor can orient.
-- **Verify** - one line: how to confirm it works.
+Each phase needs:
 
-Aim for the sweet spot: "make a helper that validates X against Y and returns Z, then wire it into the existing handler"
-- not "add `validateX(input: string): boolean`" (too micro), and not "add validation" (too vague).
+- **Goal** - one line: what this feature achieves.
+- **Files** - which files to create or change.
+- **Steps** - action items for the whole feature. Say what to do and what it should handle, name the helpers or
+  components to create and describe their job, mention how pieces connect to each other and to existing code. Reference
+  real names from the codebase (existing functions, types, routes, patterns) so the executor can orient.
+- **Verify** - how to confirm the feature works (test command, type-check, or manual check).
+
+Aim for the sweet spot: enough detail that someone can implement the whole feature without guessing, but not so
+micro that you're dictating every line.
 
 Keep the plan file moderate length. Be descriptive with fewer words.
 
@@ -44,7 +47,7 @@ name you derive from the work request. Create the `.claude/plans/` directory if 
 same slug already exists, ask the user whether to overwrite, pick a new slug, or abort. Print the saved path on the last
 line.
 
-Use this exact format in the file so `/workflow-run` can track progress by ticking sub-phase checkboxes:
+Use this exact format in the file so `/workflow-run` can track progress by ticking phase checkboxes:
 
 ```
 ## Scope
@@ -53,27 +56,19 @@ Use this exact format in the file so `/workflow-run` can track progress by ticki
 ## Open Questions
 - <only if needed>
 
-## Workflow Decision
-- <multi-phase feature or single-slice change>
-
 ## Plan
 
-### Phase 1 - <name>
-
-- [ ] 1.1 - <title>
-  **Goal:** <what and why>
+### Phase 1 - <feature name>
+- [ ] **Goal:** <what this feature achieves>
   **Files:** `path/to/file`, `path/to/other`
   **Steps:**
   1. <do this - create/change what, it should handle X and return Y>
   2. <make a helper for Z that does A and B, used by the above>
   3. <wire it into existing `handlerName` so it calls the new piece when ...>
-  **Verify:** <one-liner: test command, type-check, or manual check>
+  **Verify:** <how to confirm it works>
 
-- [ ] 1.2 - <title>
-  ...
-
-### Phase 2 - <name>
-- [ ] 2.1 - <title>
+### Phase 2 - <feature name>
+- [ ] **Goal:** <what this feature achieves>
   ...
 
 ## Notes

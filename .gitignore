@@ -3,7 +3,9 @@
 /claude/.claude/backups
 /claude/.claude/cache
 /claude/.claude/daemon
+/claude/.claude/daemon.lock
 /claude/.claude/daemon.log
+/claude/.claude/daemon.status.json
 /claude/.claude/file-history
 /claude/.claude/history.jsonl
 /claude/.claude/image-cache
