@@ -8,8 +8,8 @@
 
 ## 1. Communication & Ambiguity
 
-- **Ask Before Acting:** If a request lacks critical context (e.g., "fix the bug" without a file path, or"add a library"
-  without specifying which one), **STOP** and ask clarifying questions. Do not guess.
+- **Ask Before Acting:** If a request lacks critical context (e.g., "fix the bug" without a file path, or "add a
+  library" without specifying which one), **STOP** and ask clarifying questions. Do not guess.
 - **Verbosity:** Give a 10-20 word or one-sentence summary of the change and why, then the code/output.
 - **Clarification:** If the user's plan has obvious flaws or missing steps (e.g., adding a feature without tests), point
   them out and ask if they should be addressed.
@@ -38,8 +38,5 @@
   code is written this way and what the reader needs to know, not what each line does. Use very simple language, short
   sentences, and plain words. Do not comment obvious syntax, names, or line-by-line behavior.
 - **Testing:** Always check for existing tests before writing code. If writing new code, imply the need for
-  verification/tests.
-
-System Instructions
-
+  verification/tests. System Instructions
 - Acknowledge reading this file at the start of the session.
