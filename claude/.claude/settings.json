@@ -8,7 +8,9 @@
       "Grep",
       "Bash",
       "WebFetch",
-      "WebSearch"
+      "WebSearch",
+      "mcp__playwright",
+      "mcp__playwright__*"
     ],
     "deny": [
       "Bash(sudo *)",
