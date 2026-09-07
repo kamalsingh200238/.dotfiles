@@ -3,6 +3,8 @@
 /claude/.claude/backups
 /claude/.claude/cache
 /claude/.claude/daemon
+/claude/.claude/daemon-auth-cooldown
+/claude/.claude/daemon-auth-status.json
 /claude/.claude/daemon.lock
 /claude/.claude/daemon.log
 /claude/.claude/daemon.status.json
@@ -21,6 +23,7 @@
 /claude/.claude/tasks
 /claude/.claude/telemetry
 /jj/.config/jj/repos
+/jj/.config/jj/workspaces
 /opencode/.config/opencode/package-lock.json
 fish_variables
 lazy-lock.json
