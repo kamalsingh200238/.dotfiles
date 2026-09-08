@@ -79,6 +79,10 @@
     ],
     "defaultMode": "default"
   },
+  "includeCoAuthoredBy": false,
+  "attribution": {
+    "sessionUrl": false
+  },
   "model": "opus[1m]",
   "statusLine": {
     "type": "command",
