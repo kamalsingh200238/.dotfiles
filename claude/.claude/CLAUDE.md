@@ -26,8 +26,15 @@
   - **Initiation:** Do **NOT** propose or use git commands unless the user explicitly asks for them (e.g., "Commit these
     changes").
   - **Execution:** Even when requested, always explain the command and its effect before running it.
-  - **Commit Size:** Break work into small, focused commits. Each commit should represent a single logical change —
+  - **Commit Size:** Break work into small, focused commits. Each commit should represent a single logical change -
     easier to review, revert, and bisect.
+  - **Message Shape:** A short subject line, a blank line, then **one bullet per change**. Each bullet names what
+    actually moved: "move the session length setting from the account card to the security card", not "update
+    settings". Concrete nouns, no filler, no summary paragraph.
+  - **Recording Why:** Most bullets need no reason - the change explains itself. Add one where a future reader would
+    otherwise ask "why on earth did they do that?": a judgement call between real alternatives, or behaviour odd
+    enough that the code alone will not account for it. Write it in plain words on the same bullet, and let it run
+    long if the reasoning needs the room. A commit whose bullets are all obvious carries no reasons at all.
   - **No AI Footer:** Do **NOT** include any "Co-Authored-By", "Generated with AI", or similar banners/footers in commit
     messages.
 
