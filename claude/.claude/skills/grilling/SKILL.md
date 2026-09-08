@@ -7,7 +7,15 @@ Interview the user relentlessly until you reach a shared understanding. Map this
 
 Work the tree in **rounds**. The **frontier** is every decision whose prerequisites are already settled: the questions you can ask _now_ without guessing at answers you haven't heard yet. Ask the whole frontier in one round: number each question and give your recommended answer. Then wait for the user's answers before the next round.
 
-Format a round like so:
+## Asking a round
+
+If an interactive question tool is available, ask through it rather than in prose.
+
+Every question gets 2-4 concrete options, your recommendation first and labelled `(Recommended)`. Even an open question ("what does _done_ look like here?") gets candidate answers: naming plausible answers is the sharpening work, and the user can always write their own. Never put an option-less question through the tool.
+
+Where the tool caps how many questions one call takes, a wider frontier is asked in back-to-back calls with nothing in between: ask up to the cap, read those answers, then ask the next batch, until the frontier is exhausted. Only then act. Do not narrow the frontier to fit a single call, and do not split one round across the tool and prose.
+
+Without such a tool, format a round like so:
 
 ```
 ❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
