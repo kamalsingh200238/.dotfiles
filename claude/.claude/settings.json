@@ -88,6 +88,6 @@
     "type": "command",
     "command": "bash ~/.claude/statusline-command.sh"
   },
-  "outputStyle": "default",
+  "outputStyle": "Diataxis",
   "effortLevel": "high"
 }
