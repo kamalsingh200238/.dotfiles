@@ -80,6 +80,18 @@
       "type": "remote",
       "url": "https://mcp.notion.com/mcp",
       "enabled": true
+    },
+    // Both share one profile so a login done headed is visible headless.
+    // Chromium locks a profile dir: run one server at a time, not both.
+    "playwright-headed": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp", "--user-data-dir", "{env:HOME}/personal/browser-profile"],
+      "enabled": true
+    },
+    "playwright-headless": {
+      "type": "local",
+      "command": ["npx", "-y", "@playwright/mcp", "--headless", "--user-data-dir", "{env:HOME}/personal/browser-profile"],
+      "enabled": true
     }
   },
 }
